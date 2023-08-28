@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Utwatuzo</string>
+    <string name="title_activity_main">Utwatuzo</string>
+    <string name="package_name">dev.ksquad.utwatuzo</string>
+    <string name="custom_url_scheme">dev.ksquad.utwatuzo</string>
+</resources>
