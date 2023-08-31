@@ -14,15 +14,10 @@ export default {
       casseType: true,
       normal: true,
       active: false,
+      messageVisible: false,
     }
   },
   mounted() {
-    /* var other = localStorage.getItem("ububikoBwindome")
-    if (other) {
-      this.ububikoBwindome = JSON.parse(other);
-    }*/
-    // axios.get("http://127.0.0.1:8000/Amajambos/").then((response) => { this.ububikoBwindome = response.data });
-
     this.ububikoBwindome = this.$store.state.mots
     this.urutonde = this.ububikoBwindome.sort().map(word => word.toLowerCase());
   },
@@ -38,6 +33,15 @@ export default {
       this.active = !this.active;
       this.lowerCase = !this.lowerCase;
       this.upperCase = !this.upperCase;
+    },
+    afficherMessage() {
+      this.messageVisible = true;
+      setTimeout(() => {
+        this.messageVisible = false;
+      }, 2000);
+    },
+    copy() {
+      this.afficherMessage();
     }
   }
 }
@@ -48,6 +52,7 @@ export default {
     <div class="search-bar">
       <span>{{ urutonde.length }} kurí {{ ububikoBwindome.length }}</span>
       <input type="search" v-model.trim="term" placeholder="Rōndera ijāmbo" @keyup="filteredUrutonde(term)">
+      <i class="bi bi-files" @click="copy" v-if="term.length != 0"></i>
       <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
     </div>
     <div class="container" v-if="urutonde.length">
@@ -62,6 +67,7 @@ export default {
       <i class="bi bi-exclamation-circle"></i>
       <p>Iryo jāmbo ntirishobóye kubóneka!</p>
     </div>
+    <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
   </div>
   <NavBar />
 </template>
@@ -70,25 +76,30 @@ export default {
 .ububiko {
   width: 100%;
   height: 100vh;
-  position: relative;
-  animation: fade-in 2s;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding-block-start: 2rem;
-  padding-block-end: 4rem;
+  padding-bottom: 5rem;
   padding-inline: 1rem;
+  animation: fade-in .8s;
 }
 
 @keyframes fade-in {
   0% {
+    transform: translateX(5%);
     opacity: 0;
   }
 
   100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }
+
 
 .search-bar {
   background: #1b1b27;
@@ -109,6 +120,7 @@ export default {
   border-bottom-left-radius: 5px;
   display: flex;
   font-size: 14px;
+  user-select: none;
 }
 
 .search-bar input {
@@ -131,6 +143,10 @@ export default {
   text-align: center;
 }
 
+.bi-files:hover {
+  background: #242431;
+}
+
 .bi-type:hover:not(.active) {
   background: #242431;
 }
@@ -142,10 +158,10 @@ export default {
 
 .container {
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: #383849;
   border: 1px solid #383849;
-  padding: 1rem .5rem;
+  padding: .5rem;
   border-radius: 5px;
   overflow: auto;
 }
@@ -169,7 +185,7 @@ export default {
 .not_result {
   height: auto;
   text-align: center;
-  padding-top: 20rem;
+  padding-top: 10rem;
   color: #717178;
 }
 
@@ -177,20 +193,35 @@ export default {
   font-size: 3.5rem;
 }
 
-/* @media (max-width:768px) {
-  .search-bar {
-    width: 92%;
-    left: 4%;
-  }
+.message {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  gap: .5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: up .5S;
+}
 
-  .search-bar span {
-    width: 41%;
-    padding: .9rem .5rem;
-  }
+.message .bi-check-circle {
+  color: #2fbc38;
+}
 
-  .container {
-    left: 4%;
-    width: 92%;
+@keyframes up {
+  0% {
+    opacity: 0;
+    bottom: 0%;
   }
-} */
+  
+  100% {
+    bottom: 10%;
+    opacity: 1;
+  }
+}
 </style>

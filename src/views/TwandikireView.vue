@@ -1,3 +1,25 @@
+<script>
+export default {
+    data() {
+        return {
+            userEmail: "tonadresse@gmail.com",
+            message: "Bonjour,\n\nJe voulais te faire part de mon feedback sur ton application.\n\nCordialement,\nTon Nom",
+        }
+    },
+    methods: {
+        openGmail() {
+            // const from = this.userEmail;
+            const to = "support@utwatuzo.com";
+            const subject = "Feedback sur ton application";
+            const body = this.message;
+
+            const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(url, "_blank");
+        },
+    },
+};
+</script>
+
 <template>
     <div class="title">
         <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
@@ -22,15 +44,14 @@
                 <p>Whatsapp</p>
             </span>
         </a>
-        <a href="https://www.gmail.com/" target="_blank" class="row">
+        <a href="https://www.gmail.com/" @click="openGmail" target="_blank" class="row">
             <span>
                 <i class="bi bi-envelope"></i>
                 <p>G-mail</p>
             </span>
         </a>
     </div>
-    <p class="copyright">Developed & Designed by<a href="https://www.rizzova.com/" target="_blank">Rizzova</a>Systems.
-    </p>
+    <p class="copyright">Developed & Designed by<a href="https://www.rizzova.com/" target="_blank">Rizzova</a>Systems.</p>
 </template>
 
 <style scoped>
@@ -46,7 +67,8 @@
     font-weight: 800;
     gap: 1rem;
     padding-inline-start: 1rem;
-    animation: fade-in 2s;
+    animation: fade-in .8s;
+    user-select: none;
 }
 
 .title .bi {
@@ -67,24 +89,28 @@
     width: 100%;
     height: 100%;
     position: relative;
-    animation: fade-in 2s;
+    animation: fade-in .8s;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding-block-start: 2rem;
     padding-block-end: 4rem;
     padding-inline: 1rem;
+    user-select: none;
 }
 
 @keyframes fade-in {
     0% {
+        transform: translateX(5%);
         opacity: 0;
     }
 
     100% {
+        transform: translateX(0);
         opacity: 1;
     }
 }
+
 
 .row {
     width: 100%;

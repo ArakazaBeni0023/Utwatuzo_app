@@ -29,7 +29,8 @@ export default {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    animation: fade-in 5s;
+    animation: fade-in 6s;
+    user-select: none;
 }
 
 @keyframes fade-in {
@@ -42,6 +43,7 @@ export default {
     }
 }
 
+
 .brand {
     width: (40%, 80%);
     height: auto;
@@ -53,9 +55,12 @@ export default {
 }
 
 .brand img {
-    width: 200px;
+    width: 120px;
+    height: auto;
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .7));
-}
+    /* -webkit-box-reflect: below -0px linear-gradient(to bottom, 
+    rgba(0,0,0,0.0),  rgba(0, 0, 0, 0.4)); */
+}   
 
 .brand .text {
     text-align: center;
@@ -67,6 +72,7 @@ export default {
     letter-spacing: 5px;
     margin-block-start: -50px;
     text-shadow: 0px 5px 0px #1566e9;
+
 }
 
 .brand .text p {

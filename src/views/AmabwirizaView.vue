@@ -21,7 +21,7 @@
     font-weight: 800;
     gap: 1rem;
     padding-inline-start: 1rem;
-    animation: fade-in 2s;
+    animation: fade-in .8s;
 }
 
 .title .bi {
@@ -42,7 +42,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    animation: fade-in 2s;
+    animation: fade-in .8s;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -53,10 +53,12 @@
 
 @keyframes fade-in {
     0% {
+        transform: translateX(5%);
         opacity: 0;
     }
 
     100% {
+        transform: translateX(0);
         opacity: 1;
     }
 }

@@ -33,7 +33,7 @@
     bottom: 1%;
     box-shadow: 0px 3px 9px #00000076;
     display: flex;
-
+    user-select: none;
 }
 
 .menu .buttons {

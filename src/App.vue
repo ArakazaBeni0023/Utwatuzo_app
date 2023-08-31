@@ -48,6 +48,7 @@ body {
   letter-spacing: 2px;
   font-size: 10px;
   bottom: 2%;
+  user-select: none;
 }
 
 .copyright a {

@@ -9,15 +9,11 @@ export default {
       inPutText: '',
       outPutText: '',
       messageVisible: false,
-      ububikoAtabatuzo: [],
+      ububikoAtabwatuzo: [],
       ububikoBwindome: [],
     }
   },
   mounted() {
-    /* var other = localStorage.getItem("ububikoBwindome")
-    if (other) {
-      this.ububikoBwindome = JSON.parse(other);
-    } */
     this.ububikoBwindome = this.$store.state.mots
     this.enleverAccents();
   },
@@ -49,7 +45,7 @@ export default {
       return text.toLowerCase();
     },
     enleverAccents() {
-      this.ububikoAtabatuzo = this.ububikoBwindome.sort().map(mot => {
+      this.ububikoAtabwatuzo = this.ububikoBwindome.sort().map(mot => {
         return mot.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
       });
     },
@@ -62,8 +58,8 @@ export default {
       for (var i = 0; i < motsEntres.length; i++) {
         var motTrouve = false;
 
-        for (var j = 0; j < this.ububikoAtabatuzo.length; j++) {
-          if (this.ububikoAtabatuzo[j] === motsEntres[i]) {
+        for (var j = 0; j < this.ububikoAtabwatuzo.length; j++) {
+          if (this.ububikoAtabwatuzo[j] === motsEntres[i]) {
             resultat += this.ububikoBwindome[j] + " ";
             motTrouve = true;
             break;
@@ -83,10 +79,18 @@ export default {
         this.messageVisible = false;
       }, 2000);
     },
-    copyText() {
-      navigator.clipboard.writeText(this.outPutText);
-      this.afficherMessage();
+    kwimura() {
+      if (this.outPutText.trim() !== '') {
+        navigator.clipboard.writeText(this.outPutText)
+          .then(() => {
+            this.afficherMessage();
+          })
+          .catch((error) => {
+            console.error("Erreur lors de la copie du texte :", error);
+          });
+      }
     }
+
   },
 }
 </script> 
@@ -99,13 +103,11 @@ export default {
       <textarea class="textarea" v-model="inPutText" placeholder="Andika icó ushâka ..."></textarea>
       <button v-if="inPutText.length > 0" class="guhindura" @click="kwatura">Atura</button>
     </div>
-    <div class="output_side">
+    <div class="output_side ">
       <h2>Inyishú</h2>
-      <p>Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi
+      <p v-if="outPutText.length > 0">Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi
       </p>
-      <div class="screen">
-        <button class="btnCopy" @click="copyText" v-if="outPutText.length > 0"><i class="bi bi-files"></i>
-          Imura</button>
+      <div class="screen" v-touch:longpress="kwimura">
         {{ outPutText }}
       </div>
     </div>
@@ -117,30 +119,37 @@ export default {
 <style scoped>
 .home {
   width: 100%;
-  height: calc(100vh - 100px);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  animation: fade-in 2s;
+  animation: fade-in .8s;
   padding-top: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 @keyframes fade-in {
   0% {
+    transform: translateX(5%);
     opacity: 0;
   }
 
   100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
 .input_side,
 .output_side {
-  width: 50%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   padding: 4rem;
   gap: 1rem;
+  user-select: none;
 }
 
 h2 {
@@ -158,7 +167,7 @@ p {
   background: #0d0d14;
   color: rgb(235, 235, 235);
   text-align: start;
-  padding: 1rem 1rem 1rem;
+  padding: 1rem;
   border-radius: .5rem;
   transition: border .5s ease;
   border: 1px solid #2b3648;
@@ -182,6 +191,12 @@ p {
   overflow: auto;
 }
 
+.screen:hover {
+  cursor: pointer;
+  background: #191925;
+  border: 1px solid #33558b;
+}
+
 .guhindura {
   all: unset;
   text-align: center;
@@ -199,23 +214,6 @@ p {
   background: rgb(33, 158, 248);
 }
 
-.btnCopy {
-  all: unset;
-  position: absolute;
-  top: 1%;
-  right: 1%;
-  padding: 0.6rem .5rem;
-  background: rgba(0, 0, 0, 0.379);
-  opacity: .5;
-  border-radius: .5rem;
-  cursor: pointer;
-}
-
-.btnCopy:hover {
-  background: rgb(0, 0, 0);
-  opacity: 1;
-}
-
 span {
   background: #000;
   color: #6f747b;
@@ -229,7 +227,7 @@ span {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.645);
+  background: rgb(0, 0, 0);
   color: #ffffff;
   padding: 1rem;
   display: flex;
@@ -237,11 +235,11 @@ span {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  animation: up;
+  animation: up .5s;
 }
 
 .message .bi-check-circle {
-  color: #40e14b;
+  color: #2fbc38;
 }
 
 @keyframes up {

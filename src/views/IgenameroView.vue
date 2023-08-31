@@ -31,6 +31,10 @@ export default {
 </template>
 
 <style scoped>
+template {
+    position: fixed;
+}
+
 .title {
     background: #0e0e15c8;
     color: #d1d3d5;
@@ -41,31 +45,36 @@ export default {
     align-items: center;
     font-size: 23px;
     font-weight: 800;
-    animation: fade-in 2s;
+    animation: fade-in .8s;
+    user-select: none;
 }
 
 .igenamero {
     width: 100%;
     height: 100%;
     position: relative;
-    animation: fade-in 2s;
+    animation: fade-in .8s;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding-block-start: 2rem;
     padding-block-end: 4rem;
     padding-inline: 1rem;
+    user-select: none;
 }
 
 @keyframes fade-in {
     0% {
+        transform: translateX(5%);
         opacity: 0;
     }
 
     100% {
+        transform: translateX(0);
         opacity: 1;
     }
 }
+
 
 .row {
     width: 100%;
