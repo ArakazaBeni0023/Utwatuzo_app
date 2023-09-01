@@ -1,10 +1,33 @@
+<script>
+export default {
+    data() {
+        return {
+
+        }
+    }
+}
+</script>
+
 <template>
     <div class="title">
+        <img src="../assets/utwatuzo-drk.png">
         <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
-        <p>Amabwiriza</p>
+        <p>Amategeko</p>
     </div>
     <div class="amabwiriza">
-
+        <div v-for="item in 12" :key="item">
+            <h1>Lorem ipsum.</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem natus necessitatibus, nobis itaque tempore
+                laborum nihil illo tempora asperiores, eaque quam amet earum? Nostrum repudiandae facilis itaque. Suscipit,
+                mollitia cupiditate?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem natus necessitatibus, nobis itaque tempore
+                laborum nihil illo tempora asperiores, eaque quam amet earum? Nostrum repudiandae facilis itaque. Suscipit,
+                mollitia cupiditate?
+            </p>
+        </div>
     </div>
 </template>
 
@@ -22,7 +45,18 @@
     gap: 1rem;
     padding-inline-start: 1rem;
     animation: fade-in .8s;
+    position: relative;
+    overflow: hidden;
 }
+
+.title img {
+    position: absolute;
+    width: 55%;
+    top: -20%;
+    right: 0%;
+    opacity: .15;
+}
+
 
 .title .bi {
     border-radius: 50px;

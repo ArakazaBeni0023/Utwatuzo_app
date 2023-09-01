@@ -58,12 +58,10 @@
 }
 
 .buttons .place:hover {
-    /* background: rgba(8, 72, 117, 0.352); */
     cursor: pointer;
 }
 
 .buttons .place.router-link-exact-active {
-    /* background: rgb(33, 158, 248); */
     color: rgb(0, 149, 255);
     transition: background .5s ease;
 }

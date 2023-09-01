@@ -4,37 +4,55 @@ import KwakiraView from '../views/KwakiraView.vue'
 const routes = [
   {
     path: '/',
-    name: 'kwakira',
     component: KwakiraView
   },
   {
     path: '/kwatura',
-    name: 'kwatura',
+    meta: {
+      name: 'Kwatura',
+    },
     component: () => import('../views/KwaturaView.vue')
   },
   {
     path: '/ububiko',
-    name: 'ububiko',
+    meta: {
+      name: 'Rōndera',
+    },
     component: () => import('../views/UbubikoView.vue')
   },
   {
     path: '/insiguro',
-    name: 'insiguro',
+    meta: {
+      name: 'Insiguro ',
+    },
     component: () => import('../views/InsiguroView.vue')
   },
   {
     path: '/amabwiriza',
-    name: 'Amabwiriza',
+    meta: {
+      name: 'Amategeko',
+    },
     component: () => import('../views/AmabwirizaView.vue')
   },
   {
     path: '/twandikire',
-    name: 'Twandikire',
+    meta: {
+      name: 'Twandikire | Utwâtuzo',
+    },
     component: () => import('../views/TwandikireView.vue')
   },
   {
+    path: '/aboturibo',
+    meta: {
+      name: 'Turi Bande',
+    },
+    component: () => import('../views/AboTuribo.vue')
+  },
+  {
     path: '/igenamero',
-    name: 'Igenamero',
+    meta: {
+      name: 'Igenamero',
+    },
     component: () => import('../views/IgenameroView.vue')
   },
 ]
@@ -42,6 +60,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to) => {
+  document.title = to.meta?.name ?? '| Utwâtuzo'
 })
 
 export default router

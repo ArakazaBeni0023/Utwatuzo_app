@@ -2,15 +2,13 @@
 export default {
     data() {
         return {
-            userEmail: "tonadresse@gmail.com",
-            message: "Bonjour,\n\nJe voulais te faire part de mon feedback sur ton application.\n\nCordialement,\nTon Nom",
+            message: "",
         }
     },
     methods: {
         openGmail() {
-            // const from = this.userEmail;
-            const to = "support@utwatuzo.com";
-            const subject = "Feedback sur ton application";
+            const to = "arakazabenitresor@gmail.com";
+            const subject = "Iciyumviro kuri Application Utwâtuzo";
             const body = this.message;
 
             const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -22,6 +20,7 @@ export default {
 
 <template>
     <div class="title">
+        <img src="../assets/utwatuzo-drk.png">
         <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
         <p>Twandikire</p>
     </div>
@@ -38,7 +37,7 @@ export default {
                 <p>Instagram</p>
             </span>
         </a>
-        <a href="https://www.whatsapp.com/" target="_blank" class="row">
+        <a href="https://wa.me/qr/FTRRDKHOVLRYO1" target="_blank" class="row">
             <span>
                 <i class="bi bi-whatsapp"></i>
                 <p>Whatsapp</p>
@@ -69,6 +68,16 @@ export default {
     padding-inline-start: 1rem;
     animation: fade-in .8s;
     user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.title img {
+    position: absolute;
+    width: 55%;
+    top: -20%;
+    right: 0%;
+    opacity: .15;
 }
 
 .title .bi {

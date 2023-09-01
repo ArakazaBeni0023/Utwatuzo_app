@@ -84,18 +84,15 @@ export default {
         navigator.clipboard.writeText(this.outPutText)
           .then(() => {
             this.afficherMessage();
-          })
-          .catch((error) => {
-            console.error("Erreur lors de la copie du texte :", error);
           });
       }
     }
-
   },
 }
 </script> 
 
 <template>
+  <img class="thoth" src="../assets/thoth-drk.png">
   <div class="home">
     <div class="input_side">
       <h2>Andika Ng'ăha</h2>
@@ -103,11 +100,11 @@ export default {
       <textarea class="textarea" v-model="inPutText" placeholder="Andika icó ushâka ..."></textarea>
       <button v-if="inPutText.length > 0" class="guhindura" @click="kwatura">Atura</button>
     </div>
-    <div class="output_side ">
+    <div class="output_side">
       <h2>Inyishú</h2>
       <p v-if="outPutText.length > 0">Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi
       </p>
-      <div class="screen" v-touch:longpress="kwimura">
+      <div class="screen" @click="kwimura">
         {{ outPutText }}
       </div>
     </div>
@@ -127,6 +124,17 @@ export default {
   animation: fade-in .8s;
   padding-top: 2rem;
   padding-bottom: 2.5rem;
+  position: relative;
+}
+
+.thoth {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0%;
+  right: 0%;
+  opacity: .05;
+  transform: rotateY(180deg);
 }
 
 @keyframes fade-in {
@@ -236,6 +244,7 @@ span {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   animation: up .5s;
+  user-select: none;
 }
 
 .message .bi-check-circle {

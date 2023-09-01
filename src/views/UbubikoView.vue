@@ -40,8 +40,12 @@ export default {
         this.messageVisible = false;
       }, 2000);
     },
-    copy() {
-      this.afficherMessage();
+    kwimura(word) {
+      navigator.clipboard.writeText(word)
+        .then(() => {
+          this.afficherMessage();
+        });
+
     }
   }
 }
@@ -52,15 +56,14 @@ export default {
     <div class="search-bar">
       <span>{{ urutonde.length }} kurí {{ ububikoBwindome.length }}</span>
       <input type="search" v-model.trim="term" placeholder="Rōndera ijāmbo" @keyup="filteredUrutonde(term)">
-      <i class="bi bi-files" @click="copy" v-if="term.length != 0"></i>
       <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
     </div>
     <div class="container" v-if="urutonde.length">
       <span v-if="lowerCase">
-        <div class="item" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
+        <div class="item" @dblclick="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
       </span>
       <span v-if="upperCase">
-        <div class="item" v-for="word in urutonde" :key="word">{{ word.toUpperCase() }}</div>
+        <div class="item" @dblclick="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toUpperCase() }}</div>
       </span>
     </div>
     <div class="not_result" v-else>
@@ -99,7 +102,6 @@ export default {
     opacity: 1;
   }
 }
-
 
 .search-bar {
   background: #1b1b27;
@@ -143,10 +145,6 @@ export default {
   text-align: center;
 }
 
-.bi-files:hover {
-  background: #242431;
-}
-
 .bi-type:hover:not(.active) {
   background: #242431;
 }
@@ -164,6 +162,7 @@ export default {
   padding: .5rem;
   border-radius: 5px;
   overflow: auto;
+  user-select: none;
 }
 
 .container span {
@@ -206,7 +205,8 @@ export default {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  animation: up .5S;
+  animation: up .5s;
+  user-select: none;
 }
 
 .message .bi-check-circle {
@@ -218,7 +218,7 @@ export default {
     opacity: 0;
     bottom: 0%;
   }
-  
+
   100% {
     bottom: 10%;
     opacity: 1;

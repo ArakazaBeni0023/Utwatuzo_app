@@ -3,29 +3,24 @@ import PresView from '../components/PresView.vue'
 export default {
     components: {
         PresView
-    },
-    mounted() {
-        setTimeout(() => {
-            this.$router.push('/kwatura');
-        }, 5000);
     }
 }
 </script>
 
 <template>
-    <div class="kwakira">
-        <PresView text="Ubwiza bw'amajāmbo y'Íkirŭndi." />
+    <div class="aboturibo">
+        <PresView text="Version 1.0" />
     </div>
 </template>
 
 <style scoped>
-.kwakira {
+.aboturibo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    animation: fade-in 6s;
+    animation: fade-in 3s;
     user-select: none;
     position: relative;
 }

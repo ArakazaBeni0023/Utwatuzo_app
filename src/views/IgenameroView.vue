@@ -9,20 +9,28 @@ export default {
 
 <template>
     <div class="title">
+        <img src="../assets/utwatuzo-drk.png">
         Igenamero
     </div>
     <div class="igenamero">
         <div class="row" @click="this.$router.push('/amabwiriza');">
             <span>
                 <i class="bi bi-file-earmark-text-fill"></i>
-                <p>Soma Amabwiriza</p>
+                <p>Amategeko</p>
             </span>
             <i class="bi bi-chevron-right"></i>
         </div>
         <div class="row" @click="this.$router.push('/twandikire');">
             <span>
-                <i class="bi bi-bookmark-fill"></i>
+                <i class="bi bi-people-fill"></i>
                 <p>Twandikire</p>
+            </span>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+        <div class="row" @click="this.$router.push('/aboturibo');">
+            <span>
+                <i class="bi bi-info-circle-fill"></i>
+                <p>Turi Bande?</p>
             </span>
             <i class="bi bi-chevron-right"></i>
         </div>
@@ -47,6 +55,16 @@ template {
     font-weight: 800;
     animation: fade-in .8s;
     user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.title img {
+    position: absolute;
+    width: 55%;
+    top: -20%;
+    right: 0%;
+    opacity: .15;
 }
 
 .igenamero {

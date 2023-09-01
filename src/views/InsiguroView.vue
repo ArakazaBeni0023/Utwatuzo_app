@@ -14,6 +14,7 @@ export default {
 
 <template>
     <div class="title">
+        <img src="../assets/utwatuzo-drk.png">
         Insiguro
     </div>
     <div class="insiguro">
@@ -40,6 +41,16 @@ export default {
     font-weight: 800;
     animation: fade-in .8s;
     user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.title img {
+    position: absolute;
+    width: 55%;
+    top: -20%;
+    right: 0%;
+    opacity: .15;
 }
 
 .insiguro {
