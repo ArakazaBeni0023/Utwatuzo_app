@@ -92,8 +92,8 @@ export default {
 </script> 
 
 <template>
-  <img class="thoth" src="../assets/thoth-drk.png">
   <div class="home">
+    <img class="thoth" src="../assets/images/thoth-drk.png">
     <div class="input_side">
       <h2>Andika Ng'ăha</h2>
       <p>Hajakó utwâtuzo ahó bíkenewe (wirinde gushiramwo UDUKWABU n'UTUBURUNGU)</p>
@@ -118,23 +118,20 @@ export default {
   width: 100%;
   height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
+  padding-bottom: 3rem;
   animation: fade-in .8s;
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
-  position: relative;
 }
 
 .thoth {
   position: absolute;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   top: 0%;
-  right: 0%;
+  right: -40%;
   opacity: .05;
   transform: rotateY(180deg);
+  z-index: -10;
 }
 
 @keyframes fade-in {
@@ -165,7 +162,7 @@ h2 {
 }
 
 p {
-  margin-block-start: -1rem;
+  margin-block-start: -0.5rem;
   color: #5e6671;
   font-size: 14px;
 }
@@ -184,7 +181,7 @@ p {
 }
 
 .textarea:focus {
-  border: 1px solid #33558b;
+  border: 1px solid rgba(33, 158, 248, 0.428);
 }
 
 .screen {
@@ -201,8 +198,8 @@ p {
 
 .screen:hover {
   cursor: pointer;
-  background: #191925;
-  border: 1px solid #33558b;
+  background: rgb(25, 25, 37);
+  border: 1px solid rgba(33, 158, 248, 0.428);
 }
 
 .guhindura {
@@ -245,6 +242,7 @@ span {
   z-index: 1000;
   animation: up .5s;
   user-select: none;
+  z-index: 1000;
 }
 
 .message .bi-check-circle {
@@ -301,8 +299,12 @@ span {
   .output_side {
     width: auto;
     height: 48%;
-    padding: 1rem;
-    gap: 1rem;
+    padding: .5rem 1rem;
+    gap: .5rem;
+  }
+
+  .guhindura {
+    padding: .3rem 0rem;
   }
 }
 </style>

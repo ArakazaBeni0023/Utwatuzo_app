@@ -7,6 +7,20 @@ const routes = [
     component: KwakiraView
   },
   {
+    path: '/ikora',
+    meta: {
+      name: 'Iko Ikoreshwa',
+    },
+    component: () => import('../views/UkoIkora.vue')
+  },
+  {
+    path: '/kwatura',
+    meta: {
+      name: 'Kwâtura',
+    },
+    component: () => import('../views/KwaturaView.vue')
+  },
+  {
     path: '/kwatura',
     meta: {
       name: 'Kwatura',
@@ -63,7 +77,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
-  document.title = to.meta?.name ?? '| Utwâtuzo'
+  document.title = to.meta?.name ?? 'Utwâtuzo'
 })
 
 export default router

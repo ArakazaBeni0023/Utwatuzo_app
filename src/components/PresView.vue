@@ -7,9 +7,9 @@ export default {
 </script>
 
 <template>
-    <img src="../assets/thoth-drk.png" class="cover-drk">
+    <img src="../assets/images/thoth-drk.png" class="cover-drk">
     <div class="brand">
-        <img src="../assets/A_logo.png" alt="logo">
+        <img src="../assets/images/A_logo.png" alt="logo">
         <div class="text">
             <h1>Utwâtuzo</h1>
             <p>{{ text }}</p>

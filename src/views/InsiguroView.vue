@@ -6,64 +6,39 @@ export default {
     },
     data() {
         return {
-            lessons: ["Icirwa ca mbere", "Icirwa ca kabiri", "Icirwa ca gatatu", "Icirwa ca kane"]
+            lessons: ["Icirwa ca mbere", "Icirwa ca kabiri", "Icirwa ca gatatu"]
         }
     }
 }
 </script>
 
 <template>
-    <div class="title">
-        <img src="../assets/utwatuzo-drk.png">
-        Insiguro
-    </div>
     <div class="insiguro">
-        <div class="row" v-for="item in lessons" :key="item">
-            <span>
-                <p>{{ item }}</p>
-            </span>
-            <i class="bi bi-chevron-right"></i>
+        <div class="title">
+            <img src="../assets/images/utwatuzo-drk.png">
+            Insiguro
+        </div>
+        <div class="container">
+            <div class="row" v-for="item in lessons" :key="item">
+                <span>
+                    <p>{{ item }}</p>
+                </span>
+                <i class="bi bi-chevron-right"></i>
+            </div>
         </div>
     </div>
     <NavBar />
 </template>
 
 <style scoped>
-.title {
-    background: #0e0e15c8;
-    color: #d1d3d5;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 23px;
-    font-weight: 800;
-    animation: fade-in .8s;
-    user-select: none;
-    position: relative;
-    overflow: hidden;
-}
-
-.title img {
-    position: absolute;
-    width: 55%;
-    top: -20%;
-    right: 0%;
-    opacity: .15;
-}
-
 .insiguro {
     width: 100%;
-    height: 100%;
-    position: relative;
-    animation: fade-in .8s;
+    height: 100vh;
+    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-block-start: 2rem;
-    padding-block-end: 4rem;
-    padding-inline: 1rem;
+    animation: fade-in .8s;
     user-select: none;
 }
 
@@ -79,6 +54,35 @@ export default {
     }
 }
 
+.title {
+    background: #0e0e15c8;
+    color: #d1d3d5;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: 800;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.title img {
+    position: absolute;
+    width: 55%;
+    top: -20%;
+    right: 0%;
+    opacity: .15;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline: 4rem;
+}
 
 .row {
     width: 100%;
@@ -105,5 +109,17 @@ export default {
 
 .row span p {
     color: #d1d3d5;
+}
+
+@media (max-width:768px) {
+    .container {
+        padding-inline: 1rem;
+    }
+}
+
+@media(max-width:912px) {
+    .container {
+        padding-inline: 2rem;
+    }
 }
 </style>

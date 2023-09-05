@@ -60,10 +60,10 @@ export default {
     </div>
     <div class="container" v-if="urutonde.length">
       <span v-if="lowerCase">
-        <div class="item" @dblclick="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
+        <div class="item" @click="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
       </span>
       <span v-if="upperCase">
-        <div class="item" @dblclick="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toUpperCase() }}</div>
+        <div class="item" @click="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toUpperCase() }}</div>
       </span>
     </div>
     <div class="not_result" v-else>
@@ -87,7 +87,7 @@ export default {
   gap: 1rem;
   padding-block-start: 2rem;
   padding-bottom: 5rem;
-  padding-inline: 1rem;
+  padding-inline: 4rem;
   animation: fade-in .8s;
 }
 
@@ -222,6 +222,18 @@ export default {
   100% {
     bottom: 10%;
     opacity: 1;
+  }
+}
+
+@media (max-width:768px) {
+  .ububiko {
+    padding-inline: 1rem;
+  }
+}
+
+@media (min-width:768px) {
+  .ububiko {
+    padding-inline: 2rem;
   }
 }
 </style>

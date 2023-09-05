@@ -2,6 +2,28 @@
 export default {
     data() {
         return {
+            platforms: [
+                {
+                    'link': 'https://www.facebook.com/utwatuzo',
+                    'icon': 'bi-facebook',
+                    'title': 'Facebook',
+                },
+                {
+                    'link': 'https://www.instagram.com/utwatuzo',
+                    'icon': 'bi-instagram',
+                    'title': 'Instagram',
+                },
+                {
+                    'link': 'https://wa.me/qr/FTRRDKHOVLRYO1',
+                    'icon': 'bi-whatsapp',
+                    'title': 'Whatsapp',
+                },
+                {
+                    'link': 'https://www.gmail.com/',
+                    'icon': 'bi-envelope',
+                    'title': 'G-mail',
+                },
+            ],
             message: "",
         }
     },
@@ -19,41 +41,49 @@ export default {
 </script>
 
 <template>
-    <div class="title">
-        <img src="../assets/utwatuzo-drk.png">
-        <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
-        <p>Twandikire</p>
-    </div>
     <div class="twandikire">
-        <a href="https://www.facebook.com/utwatuzo" target="_blank" class="row">
-            <span>
-                <i class="bi bi-facebook"></i>
-                <p>Facebook</p>
-            </span>
-        </a>
-        <a href="https://www.instagram.com/utwatuzo" target="_blank" class="row">
-            <span>
-                <i class="bi bi-instagram"></i>
-                <p>Instagram</p>
-            </span>
-        </a>
-        <a href="https://wa.me/qr/FTRRDKHOVLRYO1" target="_blank" class="row">
-            <span>
-                <i class="bi bi-whatsapp"></i>
-                <p>Whatsapp</p>
-            </span>
-        </a>
-        <a href="https://www.gmail.com/" @click="openGmail" target="_blank" class="row">
-            <span>
-                <i class="bi bi-envelope"></i>
-                <p>G-mail</p>
-            </span>
-        </a>
+        <div class="title">
+            <img src="../assets/images/utwatuzo-drk.png">
+            <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
+            <p>Twandikire</p>
+        </div>
+        <div class="container">
+            <a :href="item.link" target="_blank" v-for="(item, index) in platforms" :key="item" class="row"
+                @click="index === 3 ? openGmail() : null">
+                <span>
+                    <i class="bi" :class="item.icon"></i>
+                    <p>{{ item.title }}</p>
+                </span>
+            </a>
+        </div>
     </div>
-    <p class="copyright">Developed & Designed by<a href="https://www.rizzova.com/" target="_blank">Rizzova</a>Systems.</p>
 </template>
 
 <style scoped>
+.twandikire {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fade-in .8s;
+    user-select: none;
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateX(5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
 .title {
     background: #0e0e15c8;
     color: #d1d3d5;
@@ -66,7 +96,6 @@ export default {
     font-weight: 800;
     gap: 1rem;
     padding-inline-start: 1rem;
-    animation: fade-in .8s;
     user-select: none;
     position: relative;
     overflow: hidden;
@@ -94,32 +123,12 @@ export default {
     background: #262635;
 }
 
-.twandikire {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    animation: fade-in .8s;
+.container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-block-start: 2rem;
-    padding-block-end: 4rem;
-    padding-inline: 1rem;
-    user-select: none;
+    padding-inline: 4rem;
 }
-
-@keyframes fade-in {
-    0% {
-        transform: translateX(5%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 
 .row {
     width: 100%;
@@ -146,5 +155,11 @@ export default {
 
 .row span p {
     color: #d1d3d5;
+}
+
+@media (max-width:768px) {
+    .container {
+        padding-inline: 1rem;
+    }
 }
 </style>

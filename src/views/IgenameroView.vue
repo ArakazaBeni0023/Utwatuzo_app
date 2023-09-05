@@ -4,81 +4,62 @@ export default {
     components: {
         NavBar
     },
+    data() {
+        return {
+            settings: [
+                {
+                    'to': '/amabwiriza',
+                    'icon': 'bi-file-earmark-text-fill',
+                    'title': 'Amategeko',
+                    'chevron': 'bi-chevron-right'
+                },
+                {
+                    'to': '/twandikire',
+                    'icon': 'bi-people-fill',
+                    'title': 'Twandikire',
+                    'chevron': 'bi-chevron-right'
+                },
+                {
+                    'to': '/aboturibo',
+                    'icon': 'bi-info-circle-fill',
+                    'title': 'Turi Bande?',
+                    'chevron': 'bi-chevron-right'
+                },
+            ]
+        }
+    }
 }
 </script>
 
 <template>
-    <div class="title">
-        <img src="../assets/utwatuzo-drk.png">
-        Igenamero
-    </div>
     <div class="igenamero">
-        <div class="row" @click="this.$router.push('/amabwiriza');">
-            <span>
-                <i class="bi bi-file-earmark-text-fill"></i>
-                <p>Amategeko</p>
-            </span>
-            <i class="bi bi-chevron-right"></i>
+        <div class="title">
+            <img src="../assets/images/utwatuzo-drk.png">
+            Igenamero
         </div>
-        <div class="row" @click="this.$router.push('/twandikire');">
-            <span>
-                <i class="bi bi-people-fill"></i>
-                <p>Twandikire</p>
-            </span>
-            <i class="bi bi-chevron-right"></i>
-        </div>
-        <div class="row" @click="this.$router.push('/aboturibo');">
-            <span>
-                <i class="bi bi-info-circle-fill"></i>
-                <p>Turi Bande?</p>
-            </span>
-            <i class="bi bi-chevron-right"></i>
+        <div class="container">
+            <div class="row" @click="this.$router.push(`${set.to}`)" v-for="set in settings" :key="set">
+                <span>
+                    <i class="bi" :class="set.icon"></i>
+                    <p>{{ set.title }}</p>
+                </span>
+                <i class="bi" :class="set.chevron"></i>
+            </div>
         </div>
     </div>
     <NavBar />
 </template>
 
 <style scoped>
-template {
-    position: fixed;
-}
-
-.title {
-    background: #0e0e15c8;
-    color: #d1d3d5;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 23px;
-    font-weight: 800;
-    animation: fade-in .8s;
-    user-select: none;
-    position: relative;
-    overflow: hidden;
-}
-
-.title img {
-    position: absolute;
-    width: 55%;
-    top: -20%;
-    right: 0%;
-    opacity: .15;
-}
-
 .igenamero {
     width: 100%;
-    height: 100%;
-    position: relative;
-    animation: fade-in .8s;
+    height: 100vh;
+    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-block-start: 2rem;
-    padding-block-end: 4rem;
-    padding-inline: 1rem;
     user-select: none;
+    animation: fade-in .8s;
 }
 
 @keyframes fade-in {
@@ -93,6 +74,35 @@ template {
     }
 }
 
+.title {
+    background: #0e0e15c8;
+    color: #d1d3d5;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: 800;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.title img {
+    position: absolute;
+    width: 55%;
+    top: -20%;
+    right: 0%;
+    opacity: .15;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline: 4rem;
+}
 
 .row {
     width: 100%;
@@ -119,5 +129,11 @@ template {
 
 .row span p {
     color: #d1d3d5;
+}
+
+@media (max-width:768px) {
+    .container {
+        padding-inline: 1rem;
+    }
 }
 </style>
