@@ -119,7 +119,7 @@ export default {
   height: 100vh;
   position: fixed;
   display: flex;
-  padding-bottom: 4.5rem;
+  padding-bottom: 8.5rem;
   animation: fade-in .8s;
 }
 
@@ -229,7 +229,7 @@ span {
 
 .message {
   position: fixed;
-  bottom: 9%;
+  bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
   background: rgb(0, 0, 0);
@@ -255,7 +255,7 @@ span {
   }
 
   100% {
-    bottom: 9%;
+    bottom: 12%;
   }
 }
 

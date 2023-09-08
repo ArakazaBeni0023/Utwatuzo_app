@@ -127,7 +127,7 @@ export default {
   flex-direction: column;
   gap: 1rem;
   padding-block-start: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 9rem;
   padding-inline: 4rem;
   animation: fade-in .8s;
 }
@@ -242,7 +242,7 @@ export default {
 
 .message {
   position: fixed;
-  bottom: 9%;
+  bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
   background: rgb(0, 0, 0);
@@ -268,7 +268,7 @@ export default {
   }
 
   100% {
-    bottom: 9%;
+    bottom: 12%;
     opacity: 1;
   }
 }

@@ -56,7 +56,6 @@ export default {
     letter-spacing: 5px;
     margin-block-start: -50px;
     text-shadow: 0px 5px 0px #1566e9;
-
 }
 
 .brand .text p {

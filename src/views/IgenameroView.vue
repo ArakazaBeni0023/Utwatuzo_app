@@ -53,7 +53,7 @@ export default {
 <style scoped>
 .igenamero {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -98,6 +98,8 @@ export default {
 }
 
 .container {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;

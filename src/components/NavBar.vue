@@ -47,7 +47,7 @@ export default {
     width: 92%;
     position: absolute;
     left: 4%;
-    bottom: 1%;
+    bottom: 2%;
     padding: .3rem;
     border-radius: 50px;
     user-select: none;
@@ -64,7 +64,7 @@ export default {
 
 .buttons .place {
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 1px;
     text-decoration: none;
     color: rgba(225, 223, 223, 0.585);
