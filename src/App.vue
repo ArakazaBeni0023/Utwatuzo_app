@@ -30,6 +30,11 @@
   background: #333344;
 }
 
+@font-face {
+  font-family: 'corbel';
+  src: url("./assets/fonts/corbel.otf");
+}
+
 body {
   background: #12121c;
   color: #e8e8e8;

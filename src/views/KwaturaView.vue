@@ -102,9 +102,8 @@ export default {
     </div>
     <div class="output_side">
       <h3>Inyishú</h3>
-      <p v-if="outPutText.length > 0">Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi
-      </p>
-      <div class="screen" @click="kwimura">
+      <p v-if="outPutText.length > 0">Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi</p>
+      <div class="screen" @dblclick="kwimura">
         {{ outPutText }}
       </div>
     </div>
@@ -262,6 +261,7 @@ span {
 @media(max-width:768px) {
   .home {
     width: 100%;
+    height: 100vh;
     display: block;
     flex-direction: column;
   }

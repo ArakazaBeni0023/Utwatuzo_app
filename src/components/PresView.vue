@@ -20,6 +20,11 @@ export default {
 </template>
 
 <style scoped>
+@font-face {
+    font-family: 'Hey Jintan';
+    src: url('../assets/fonts/Heyjintan-9YVPK.otf');
+}
+
 .cover-drk {
     position: absolute;
     width: 120%;
