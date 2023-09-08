@@ -24,9 +24,50 @@ export default {
   methods: {
     filteredUrutonde(term) {
       const filteredUrutonde = this.ububikoBwindome.filter(word => {
-        return word.toLowerCase().includes(term.toLowerCase());
+        const wordWithoutAccents = this.removeAccents(word.toLowerCase());
+        const termWithoutAccents = this.removeAccents(term.toLowerCase());
+        return wordWithoutAccents.includes(termWithoutAccents);
       });
       return this.urutonde = filteredUrutonde;
+    },
+    removeAccents(word) {
+      const accents = {
+        'â': 'a',
+        'à': 'a',
+        'á': 'a',
+        'ā': 'a',
+        'ã': 'a',
+        'ă': 'a',
+        'ä': 'a',
+        'é': 'e',
+        'è': 'e',
+        'ê': 'e',
+        'ë': 'e',
+        'ĕ': 'e',
+        'ē': 'e',
+        'î': 'i',
+        'ï': 'i',
+        'í': 'i',
+        'ì': 'i',
+        'ĩ': 'i',
+        'ĭ': 'i',
+        'ī': 'i',
+        'ô': 'o',
+        'ǒ': 'o',
+        'ö': 'o',
+        'ō': 'o',
+        'ó': 'o',
+        'ò': 'o',
+        'õ': 'o',
+        'ù': 'u',
+        'ú': 'u',
+        'û': 'u',
+        'ŭ': 'u',
+        'ü': 'u',
+        'ū': 'u',
+        'ũ': 'u',
+      };
+      return word.replace(/[âàáāãăäéèêëĕēîïíìĩĭīôǒöóòõöùúûŭüūũ]/g, match => accents[match]);
     },
     casse() {
       this.normal = !this.normal;
@@ -45,7 +86,6 @@ export default {
         .then(() => {
           this.afficherMessage();
         });
-
     }
   }
 }
@@ -55,7 +95,7 @@ export default {
   <div class="ububiko">
     <div class="search-bar">
       <span>{{ urutonde.length }} kurí {{ ububikoBwindome.length }}</span>
-      <input type="search" v-model.trim="term" placeholder="Rōndera ijāmbo" @keyup="filteredUrutonde(term)">
+      <input type="search" v-model.trim="term" placeholder="Andika ngaha ijāmbo ukeneye" @keyup="filteredUrutonde(term)">
       <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
     </div>
     <div class="container" v-if="urutonde.length">
@@ -63,7 +103,8 @@ export default {
         <div class="item" @click="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
       </span>
       <span v-if="upperCase">
-        <div class="item" @click="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toUpperCase() }}</div>
+        <div class="item" @click="kwimura(word.toUpperCase())" v-for="word in urutonde" :key="word">{{ word.toUpperCase()
+        }}</div>
       </span>
     </div>
     <div class="not_result" v-else>
@@ -121,6 +162,8 @@ export default {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 14px;
   user-select: none;
 }
@@ -179,6 +222,11 @@ export default {
   display: flex;
   justify-content: center;
   flex: 1 1 100px;
+  transition: background .5s ease-in-out;
+}
+
+.container span .item:hover {
+  background: #242431;
 }
 
 .not_result {
@@ -194,7 +242,7 @@ export default {
 
 .message {
   position: fixed;
-  bottom: 10%;
+  bottom: 9%;
   left: 50%;
   transform: translateX(-50%);
   background: rgb(0, 0, 0);
@@ -220,7 +268,7 @@ export default {
   }
 
   100% {
-    bottom: 10%;
+    bottom: 9%;
     opacity: 1;
   }
 }
@@ -234,6 +282,20 @@ export default {
 @media (min-width:768px) {
   .ububiko {
     padding-inline: 2rem;
+  }
+
+  .message {
+    bottom: 18%;
+  }
+
+  @keyframes up {
+    0% {
+      bottom: 0%;
+    }
+
+    100% {
+      bottom: 18%;
+    }
   }
 }
 </style>

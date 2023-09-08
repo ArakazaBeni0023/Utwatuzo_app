@@ -95,13 +95,13 @@ export default {
   <div class="home">
     <img class="thoth" src="../assets/images/thoth-drk.png">
     <div class="input_side">
-      <h2>Andika Ng'ăha</h2>
+      <h3>Andika</h3>
       <p>Hajakó utwâtuzo ahó bíkenewe (wirinde gushiramwo UDUKWABU n'UTUBURUNGU)</p>
-      <textarea class="textarea" v-model="inPutText" placeholder="Andika icó ushâka ..."></textarea>
+      <textarea class="textarea" v-model.trim="inPutText" placeholder="andika ng'ăha ..."></textarea>
       <button v-if="inPutText.length > 0" class="guhindura" @click="kwatura">Atura</button>
     </div>
     <div class="output_side">
-      <h2>Inyishú</h2>
+      <h3>Inyishú</h3>
       <p v-if="outPutText.length > 0">Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi
       </p>
       <div class="screen" @click="kwimura">
@@ -119,7 +119,7 @@ export default {
   height: 100vh;
   position: fixed;
   display: flex;
-  padding-bottom: 3rem;
+  padding-bottom: 4.5rem;
   animation: fade-in .8s;
 }
 
@@ -129,7 +129,7 @@ export default {
   height: 100%;
   top: 0%;
   right: -40%;
-  opacity: .05;
+  opacity: .06;
   transform: rotateY(180deg);
   z-index: -10;
 }
@@ -153,7 +153,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 4rem;
-  gap: 1rem;
+  gap: .5rem;
   user-select: none;
 }
 
@@ -229,7 +229,7 @@ span {
 
 .message {
   position: fixed;
-  bottom: 10%;
+  bottom: 9%;
   left: 50%;
   transform: translateX(-50%);
   background: rgb(0, 0, 0);
@@ -255,7 +255,7 @@ span {
   }
 
   100% {
-    bottom: 10%;
+    bottom: 9%;
   }
 }
 
@@ -274,37 +274,37 @@ span {
   }
 }
 
-@media(max-width:820px) {
+@media(min-width:768px) {
   .home {
     display: block;
     flex-direction: column;
+    padding-bottom: 3.5rem;
   }
 
   .input_side,
   .output_side {
     width: auto;
     height: 48%;
-    padding: 1rem;
-    gap: 1rem;
-  }
-}
-
-@media(max-width:912px) {
-  .home {
-    display: block;
-    flex-direction: column;
-  }
-
-  .input_side,
-  .output_side {
-    width: auto;
-    height: 48%;
-    padding: .5rem 1rem;
+    padding: .5rem 2rem;
     gap: .5rem;
   }
 
   .guhindura {
-    padding: .3rem 0rem;
+    padding: .5rem 0rem;
+  }
+
+  .message {
+    bottom: 17%;
+  }
+
+  @keyframes up {
+    0% {
+      bottom: 0%;
+    }
+
+    100% {
+      bottom: 17%;
+    }
   }
 }
 </style>

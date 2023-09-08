@@ -13,24 +13,31 @@ export default {
         <div class="title">
             <img src="../assets/images/utwatuzo-drk.png">
             <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
-            <p>Amategeko</p>
+            <p>Uko Ikora</p>
         </div>
         <div class="container">
-            <div v-for="item in 4" :key="item">
-                <h1>Lorem ipsum.</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem natus necessitatibus, nobis itaque
-                    tempore
-                    laborum nihil illo tempora asperiores, eaque quam amet earum? Nostrum repudiandae facilis itaque.
-                    Suscipit,
-                    mollitia cupiditate?
+            <div>
+                <h3>Ní guté nó hindura ivyó nanditse?</h3>
+                <p>Nkuko biboneka kuru papuro ushikirako <b>Kwâtura</b> hari ibice bibiri bikuru bikuru:</p><br>
+
+                <h4>1. Ígicé ca mbere nahó wandika inyandiko zāwé ukenye kó
+                    hajá kó utwâtuzo.</h4>
+                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gice câ mbere hama ucè ufyonda kurí bouton yîtwa
+                    <b>Atura</b>.
+                </p><br>
+
+                <h4>2. Ígicé câ kábiri nahó ubonera inyandiko ziriko utwâtuzo.</h4>
+                <p style="margin-left: 1.5rem;">Kugíra wimure inyandiko zāwé zatuye fyônda kunyandiko incuro zibiri
+                    zikurukirana ziri kugice câ kábiri.
                 </p>
+            </div>
+            <div>
+                <h3>Ní guté nó rōndera ijāmbo?</h3>
+                <p>ja kurupapuro rwó kurondererako hama Andika ijāmbo ukeneye ahabigenewe ijāmbo rica ryizana, ritabonetse
+                    nûkó ritarimwo mū ububiko cânke
+                    ritaturwa.</p> <br>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem natus necessitatibus, nobis itaque
-                    tempore
-                    laborum nihil illo tempora asperiores, eaque quam amet earum? Nostrum repudiandae facilis itaque.
-                    Suscipit,
-                    mollitia cupiditate?
+                    Ijāmbo ukeneye ribonetse câ ufyonda kábiri ki kurikiranya kurí ryó kugíra uryimure.
                 </p>
             </div>
         </div>
@@ -45,6 +52,7 @@ export default {
     flex-direction: column;
     gap: 1rem;
     animation: fade-in .8s;
+    user-select: none;
 }
 
 @keyframes fade-in {
@@ -107,6 +115,19 @@ export default {
     padding-inline: 4rem;
     padding-bottom: 2rem;
     text-align: justify;
+}
+
+.container h3 {
+    letter-spacing: 1px;
+}
+
+.container p {
+    color: #81818d;
+    letter-spacing: 1px;
+}
+
+.container p b {
+    color: #fff;
 }
 
 @media (max-width:768px) {

@@ -10,7 +10,7 @@ export default {
                 {
                     'to': '/amabwiriza',
                     'icon': 'bi-file-earmark-text-fill',
-                    'title': 'Amategeko',
+                    'title': 'Ukó Ikora',
                     'chevron': 'bi-chevron-right'
                 },
                 {
@@ -22,7 +22,7 @@ export default {
                 {
                     'to': '/aboturibo',
                     'icon': 'bi-info-circle-fill',
-                    'title': 'Turi Bande?',
+                    'title': 'Turí bāndé?',
                     'chevron': 'bi-chevron-right'
                 },
             ]

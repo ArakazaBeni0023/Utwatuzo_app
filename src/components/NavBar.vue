@@ -80,7 +80,7 @@ export default {
 }
 
 .buttons .place:hover {
-    background: rgba(2, 61, 103, 0.432);
+    background: rgba(2, 61, 103, 0.383);
 }
 
 .buttons .place span {
@@ -97,7 +97,7 @@ export default {
 .buttons .place.router-link-exact-active {
     background: rgb(33, 158, 248);
     color: rgb(255, 255, 255);
-    column-gap: 1em;
+    column-gap: 0.5em;
 }
 
 /* .buttons .place:hover span, */

@@ -4,19 +4,9 @@ export default {
         return {
             platforms: [
                 {
-                    'link': 'https://www.facebook.com/utwatuzo',
+                    'link': 'https://www.facebook.com/ubwatuzo',
                     'icon': 'bi-facebook',
                     'title': 'Facebook',
-                },
-                {
-                    'link': 'https://www.instagram.com/utwatuzo',
-                    'icon': 'bi-instagram',
-                    'title': 'Instagram',
-                },
-                {
-                    'link': 'https://wa.me/qr/FTRRDKHOVLRYO1',
-                    'icon': 'bi-whatsapp',
-                    'title': 'Whatsapp',
                 },
                 {
                     'link': 'https://www.gmail.com/',
