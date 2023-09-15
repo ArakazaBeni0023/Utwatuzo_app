@@ -62,7 +62,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 800;
     user-select: none;
     position: relative;

@@ -9,7 +9,7 @@ export default {
 <template>
     <img src="../assets/images/thoth-drk.png" class="cover-drk">
     <div class="brand">
-        <img src="../assets/images/A_logo.png" alt="logo">
+        <img src="../assets/images/logo.png" alt="logo">
         <div class="text">
             <h1>Utwâtuzo</h1>
             <p>{{ text }}</p>
@@ -21,8 +21,8 @@ export default {
 
 <style scoped>
 @font-face {
-    font-family: 'Hey Jintan';
-    src: url('../assets/fonts/Heyjintan-9YVPK.otf');
+    font-family: 'Birthday Party';
+    src: url('../assets/fonts/BirthdayParty-rgGeL.otf');
 }
 
 .cover-drk {
@@ -31,24 +31,23 @@ export default {
     left: -30%;
     bottom: 0%;
     opacity: .05;
+    user-select: none;
 }
 
 .brand {
-    width: (40%, 80%);
+    /* width: (40%, 80%); */
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .brand img {
-    width: 120px;
+    width: 100px;
     height: auto;
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .7));
-    /* -webkit-box-reflect: below -0px linear-gradient(to bottom, 
-    rgba(0,0,0,0.0),  rgba(0, 0, 0, 0.4)); */
 }
 
 .brand .text {
@@ -57,10 +56,8 @@ export default {
 
 .brand .text h1 {
     font-size: 4rem;
-    font-family: 'Hey Jintan';
-    letter-spacing: 5px;
-    margin-block-start: -50px;
-    text-shadow: 0px 5px 0px #1566e9;
+    font-family: 'Birthday Party';
+    letter-spacing: 3px;
 }
 
 .brand .text p {

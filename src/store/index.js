@@ -1919,7 +1919,7 @@ export default createStore({
       "ûmwâna",
       "ûnó",
       "ûryôshe",
-      "ûwo",
+      "n'ûwo",
       "ûwu",
       "ākâhé",
       "ăgīye",

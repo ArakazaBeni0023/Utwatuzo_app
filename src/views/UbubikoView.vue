@@ -94,7 +94,7 @@ export default {
 <template>
   <div class="ububiko">
     <div class="search-bar">
-      <span>{{ urutonde.length }} kurí {{ ububikoBwindome.length }}</span>
+      <span>{{ urutonde.length }} <p> / </p> {{ ububikoBwindome.length }}</span>
       <input type="search" v-model.trim="term" placeholder="Andika ngaha ijāmbo ukeneye" @keyup="filteredUrutonde(term)">
       <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
     </div>
@@ -119,7 +119,7 @@ export default {
 <style scoped>
 .ububiko {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 11%);
   position: fixed;
   top: 0;
   left: 0;
@@ -127,7 +127,6 @@ export default {
   flex-direction: column;
   gap: 1rem;
   padding-block-start: 2rem;
-  padding-bottom: 9rem;
   padding-inline: 4rem;
   animation: fade-in .8s;
 }
@@ -168,10 +167,13 @@ export default {
   user-select: none;
 }
 
+.search-bar span p {
+  margin-inline: .2rem;
+}
+
 .search-bar input {
   all: unset;
   width: 83%;
-  width: 100%;
   padding: .8rem .5rem;
   transition: background .5s ease;
 }
@@ -245,7 +247,7 @@ export default {
   bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.800);
   color: #ffffff;
   padding: 1rem;
   display: flex;
@@ -281,7 +283,7 @@ export default {
 
 @media (min-width:768px) {
   .ububiko {
-    padding-inline: 2rem;
+    padding-inline: 4rem;
   }
 
   .message {

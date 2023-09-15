@@ -1,5 +1,5 @@
 <script>
-import NavBar from '../components/NavBar.vue'
+import NavBar from '@/components/NavBar.vue';
 export default {
   components: {
     NavBar,
@@ -92,7 +92,7 @@ export default {
 </script> 
 
 <template>
-  <div class="home">
+  <div class="kwatura">
     <img class="thoth" src="../assets/images/thoth-drk.png">
     <div class="input_side">
       <h3>Andika</h3>
@@ -108,17 +108,17 @@ export default {
       </div>
     </div>
     <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
+    <NavBar />
   </div>
-  <NavBar />
 </template>
 
 <style scoped>
-.home {
+.kwatura {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 10%);
   position: fixed;
   display: flex;
-  padding-bottom: 8.5rem;
+  padding-block-start: 1rem;
   animation: fade-in .8s;
 }
 
@@ -177,9 +177,11 @@ p {
   border: 1px solid #2b3648;
   font-family: 'corbel';
   height: 100%;
+  resize: none;
 }
 
 .textarea:focus {
+  resize: none;
   border: 1px solid rgba(33, 158, 248, 0.428);
 }
 
@@ -231,7 +233,7 @@ span {
   bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.80);
   color: #ffffff;
   padding: 1rem;
   display: flex;
@@ -259,9 +261,9 @@ span {
 }
 
 @media(max-width:768px) {
-  .home {
+  .kwatura {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 10%);
     display: block;
     flex-direction: column;
   }
@@ -271,11 +273,19 @@ span {
     width: 100%;
     height: 50%;
     padding: 1rem 1rem;
+    resize: none;
+  }
+
+  .textarea,
+  .textarea:focus {
+    height: 300px;
+    resize: none;
   }
 }
 
-@media(min-width:768px) {
-  .home {
+
+@media(min-width:600px) {
+  .kwatura {
     display: block;
     flex-direction: column;
     padding-bottom: 3.5rem;
@@ -285,8 +295,14 @@ span {
   .output_side {
     width: auto;
     height: 48%;
-    padding: .5rem 2rem;
+    padding: .5rem 4rem;
     gap: .5rem;
+  }
+
+  .textarea,
+  .textarea:focus {
+    height: 300px;
+    resize: none;
   }
 
   .guhindura {

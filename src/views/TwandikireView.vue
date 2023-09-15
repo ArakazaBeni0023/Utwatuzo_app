@@ -80,9 +80,8 @@ export default {
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: start;
     align-items: center;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 800;
     gap: 1rem;
     padding-inline-start: 1rem;
@@ -129,7 +128,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     padding-inline: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #5e6671;
     text-decoration: none;
 }

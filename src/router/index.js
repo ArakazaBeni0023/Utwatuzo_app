@@ -7,16 +7,16 @@ const routes = [
     component: KwakiraView
   },
   {
-    path: '/kwatura',
+    path: '/kwiyandikisha',
     meta: {
-      name: 'Kwâtura',
+      name: 'Kwiyandikisha',
     },
-    component: () => import('../views/KwaturaView.vue')
+    component: () => import('../components/KwiyandikishaCmp.vue')
   },
   {
     path: '/kwatura',
     meta: {
-      name: 'Kwatura',
+      name: 'Kwâtura',
     },
     component: () => import('../views/KwaturaView.vue')
   },
@@ -35,11 +35,11 @@ const routes = [
     component: () => import('../views/InsiguroView.vue')
   },
   {
-    path: '/amabwiriza',
+    path: '/uko_ikora',
     meta: {
       name: 'Amategeko',
     },
-    component: () => import('../views/AmabwirizaView.vue')
+    component: () => import('../views/Uko_ikoraView.vue')
   },
   {
     path: '/twandikire',
@@ -61,7 +61,7 @@ const routes = [
       name: 'Igenamero',
     },
     component: () => import('../views/IgenameroView.vue')
-  },
+  }
 ]
 
 const router = createRouter({

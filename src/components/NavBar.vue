@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .nav {
-    background: rgb(27, 27, 39);
+    background: rgb(18, 18, 28);
     border: 1px solid rgba(33, 158, 248, 0.428);
     width: 92%;
     position: absolute;

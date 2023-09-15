@@ -8,7 +8,7 @@ export default {
         return {
             settings: [
                 {
-                    'to': '/amabwiriza',
+                    'to': '/uko_ikora',
                     'icon': 'bi-file-earmark-text-fill',
                     'title': 'Ukó Ikora',
                     'chevron': 'bi-chevron-right'
@@ -58,8 +58,8 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    user-select: none;
     animation: fade-in .8s;
+    user-select: none;
 }
 
 @keyframes fade-in {
@@ -82,7 +82,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 800;
     user-select: none;
     position: relative;
@@ -115,7 +115,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     padding-inline: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #5e6671;
     text-decoration: none;
 }

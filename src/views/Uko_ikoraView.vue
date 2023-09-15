@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div class="amabwiriza">
+    <div class="uko_ikora">
         <div class="title">
             <img src="../assets/images/utwatuzo-drk.png">
             <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
@@ -33,7 +33,7 @@ export default {
             </div>
             <div>
                 <h3>Ní guté nó rōndera ijāmbo?</h3>
-                <p>ja kurupapuro rwó kurondererako hama Andika ijāmbo ukeneye ahabigenewe ijāmbo rica ryizana, ritabonetse
+                <p>Ja kurupapuro rwó kurondererako hama Andika ijāmbo ukeneye ahabigenewe ijāmbo rica ryizana, ritabonetse
                     nûkó ritarimwo mū ububiko cânke
                     ritaturwa.</p> <br>
                 <p>
@@ -45,7 +45,7 @@ export default {
 </template>
 
 <style scoped>
-.amabwiriza {
+.uko_ikora {
     width: 100%;
     height: 100%;
     display: flex;
@@ -73,13 +73,13 @@ export default {
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: start;
     align-items: center;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 800;
     gap: 1rem;
     padding-inline-start: 1rem;
     position: relative;
+    user-select: none;
     overflow: hidden;
 }
 
@@ -111,10 +111,10 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
+    text-align: justify;
     gap: 1rem;
     padding-inline: 4rem;
     padding-bottom: 2rem;
-    text-align: justify;
 }
 
 .container h3 {
