@@ -7,13 +7,6 @@ const routes = [
     component: KwakiraView
   },
   {
-    path: '/kwiyandikisha',
-    meta: {
-      name: 'Kwiyandikisha',
-    },
-    component: () => import('../components/KwiyandikishaCmp.vue')
-  },
-  {
     path: '/kwatura',
     meta: {
       name: 'Kwâtura',

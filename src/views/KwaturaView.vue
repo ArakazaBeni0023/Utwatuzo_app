@@ -108,8 +108,8 @@ export default {
       </div>
     </div>
     <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
-    <NavBar />
   </div>
+  <NavBar />
 </template>
 
 <style scoped>

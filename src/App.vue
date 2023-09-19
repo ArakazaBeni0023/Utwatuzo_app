@@ -58,7 +58,7 @@ body {
 
 .copyright a {
   all: unset;
-  color: rgb(33, 158, 248);
+  color: rgb(32, 158, 248);
   margin-inline: 5px;
   cursor: pointer;
 }

@@ -11,7 +11,7 @@ export default {
     <div class="brand">
         <img src="../assets/images/logo.png" alt="logo">
         <div class="text">
-            <h1>Utwâtuzo</h1>
+            <img class="brand_name" src="../assets/images/utwatuzo.png" alt="brand-name">
             <p>{{ text }}</p>
         </div>
     </div>
@@ -20,11 +20,6 @@ export default {
 </template>
 
 <style scoped>
-@font-face {
-    font-family: 'Birthday Party';
-    src: url('../assets/fonts/BirthdayParty-rgGeL.otf');
-}
-
 .cover-drk {
     position: absolute;
     width: 120%;
@@ -54,10 +49,8 @@ export default {
     text-align: center;
 }
 
-.brand .text h1 {
-    font-size: 4rem;
-    font-family: 'Birthday Party';
-    letter-spacing: 3px;
+.brand .text .brand_name {
+    width: 230px;
 }
 
 .brand .text p {
