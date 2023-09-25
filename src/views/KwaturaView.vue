@@ -148,7 +148,7 @@ export default {
 .input_side,
 .output_side {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 4rem;
@@ -273,7 +273,6 @@ span {
     width: 100%;
     height: 50%;
     padding: 1rem 1rem;
-    resize: none;
   }
 
   .textarea,
@@ -283,18 +282,17 @@ span {
   }
 }
 
-
 @media(min-width:600px) {
   .kwatura {
-    display: block;
-    flex-direction: column;
+    display: flex;
+    /* flex-direction: column; */
     padding-bottom: 3.5rem;
   }
 
   .input_side,
   .output_side {
-    width: auto;
-    height: 48%;
+    width: 100%;
+    height: 100%;
     padding: .5rem 4rem;
     gap: .5rem;
   }

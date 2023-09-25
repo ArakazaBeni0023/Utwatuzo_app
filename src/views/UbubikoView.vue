@@ -94,7 +94,9 @@ export default {
 <template>
   <div class="ububiko">
     <div class="search-bar">
-      <span>{{ urutonde.length }} <p> / </p> {{ ububikoBwindome.length }}</span>
+      <span>{{ urutonde.length }}
+        <p> / </p> {{ ububikoBwindome.length }}
+      </span>
       <input type="search" v-model.trim="term" placeholder="Andika ngaha ijāmbo ukeneye" @keyup="filteredUrutonde(term)">
       <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
     </div>
@@ -119,7 +121,7 @@ export default {
 <style scoped>
 .ububiko {
   width: 100%;
-  height: calc(100vh - 11%);
+  height: calc(100vh - 12%);
   position: fixed;
   top: 0;
   left: 0;

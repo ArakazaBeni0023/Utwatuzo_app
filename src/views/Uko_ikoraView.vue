@@ -10,6 +10,7 @@ export default {
 
 <template>
     <div class="uko_ikora">
+        <img class="thoth" src="../assets/images/thoth-drk.png">
         <div class="title">
             <img src="../assets/images/utwatuzo-drk.png">
             <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
@@ -67,6 +68,17 @@ export default {
     }
 }
 
+.thoth {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    opacity: .06;
+    transform: rotateY(180deg);
+    z-index: -10;
+}
+
 .title {
     background: #0e0e15c8;
     color: #d1d3d5;
@@ -118,6 +130,10 @@ export default {
 }
 
 .container h3 {
+    letter-spacing: 1px;
+}
+
+.container h4 {
     letter-spacing: 1px;
 }
 
