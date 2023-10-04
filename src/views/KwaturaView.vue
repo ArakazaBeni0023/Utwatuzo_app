@@ -103,7 +103,7 @@ export default {
     <div class="output_side">
       <h3>Inyishú</h3>
       <p v-if="outPutText.length > 0">Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi</p>
-      <div class="screen" @dblclick="kwimura">
+      <div class="screen" @click="kwimura">
         {{ outPutText }}
       </div>
     </div>
@@ -130,6 +130,7 @@ export default {
   right: -40%;
   opacity: .06;
   transform: rotateY(180deg);
+  user-select: none;
   z-index: -10;
 }
 
@@ -182,7 +183,7 @@ p {
 
 .textarea:focus {
   resize: none;
-  border: 1px solid rgba(33, 158, 248, 0.428);
+  border: 1px solid #219ef86d;
 }
 
 .screen {
@@ -213,7 +214,6 @@ p {
   cursor: pointer;
   transition: background .5s ease;
   opacity: 1;
-
 }
 
 .guhindura:hover {
@@ -319,6 +319,12 @@ span {
     100% {
       bottom: 17%;
     }
+  }
+}
+
+@media (max-height:700px) {
+  NavBar {
+    display: none;
   }
 }
 </style>

@@ -146,6 +146,7 @@ export default {
     color: #fff;
 }
 
+
 @media (max-width:768px) {
     .container {
         padding-inline: 1rem;

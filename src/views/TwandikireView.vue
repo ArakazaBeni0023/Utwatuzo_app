@@ -20,7 +20,7 @@ export default {
     methods: {
         openGmail() {
             const to = "arakazabenitresor@gmail.com";
-            const subject = "Iciyumviro kuri Application Utwâtuzo";
+            const subject = "Iciyumviro cawe kuri Application Utwâtuzo";
             const body = this.message;
 
             const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
