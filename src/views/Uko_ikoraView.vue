@@ -21,9 +21,9 @@ export default {
                 <h3>Ní guté nó hindura ivyó nanditse?</h3>
                 <p>Nkuko biboneka kuru papuro ushikirako <b>Kwâtura</b> hari ibice bibiri bikuru bikuru:</p><br>
 
-                <h4>1. Ígicé ca mbere nahó wandika inyandiko zāwé ukenye kó
-                    hajá kó utwâtuzo.</h4>
-                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gice câ mbere hama ucè ufyonda kurí bouton yîtwa
+                <h4>1. Ígicé câ mberé nahó wandika inyandiko zāwé ukenye kó
+                    hajákó utwâtuzo.</h4>
+                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gice câ mberé hama ucè ufyonda kurí bouton yîtwa
                     <b>Atura</b>.
                 </p><br>
 
@@ -34,8 +34,8 @@ export default {
             </div>
             <div>
                 <h3>Ní guté nó rōndera ijāmbo?</h3>
-                <p>Ja kurupapuro rwó kurondererako hama Andika ijāmbo ukeneye ahabigenewe ijāmbo rica ryizana, ritabonetse
-                    nûkó ritarimwo mū ububiko cânke
+                <p>Ja kuru papuro rwó kurondererako hama wandike ijāmbo ukeneye ahabigenewe ijāmbo rica ryizana, ritabonetse
+                    nûkó ritarimwo mū bubiko cânke
                     ritaturwa.</p> <br>
                 <p>
                     Ijāmbo ukeneye ribonetse câ ufyonda kábiri ki kurikiranya kurí ryó kugíra uryimure.
