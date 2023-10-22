@@ -92,34 +92,33 @@ export default {
 </script> 
 
 <template>
-  <div class="kwatura">
+  <div class="main-container">
     <img class="thoth" src="../assets/images/thoth-drk.png">
-    <div class="input_side">
-      <h3>Andika</h3>
-      <p>Hajakó utwâtuzo ahó bíkenewe (wirinde gushiramwo UDUKWABU n'UTUBURUNGU)</p>
-      <textarea class="textarea" v-model.trim="inPutText" placeholder="andika ng'ăha ..."></textarea>
-      <button v-if="inPutText.length > 0" class="guhindura" @click="kwatura">Atura</button>
-    </div>
-    <div class="output_side">
-      <h3>Inyishú</h3>
-      <p v-if="outPutText.length > 0">Ubu inyandiko zirikó ubwâtuzo bw'Ikirŭndi</p>
-      <div class="screen" @click="kwimura">
-        {{ outPutText }}
+    <div class="container">
+      <div class="impindura">
+        <div class="input-section">
+          <textarea v-model="inPutText" placeholder="Andika ng'ăha icó ushâka ..."></textarea>
+          <button v-if="inPutText.length != 0" @click="kwatura">Atura</button>
+        </div>
+        <div class="output-section" @click="kwimura">
+          {{ outPutText }}
+        </div>
       </div>
     </div>
-    <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
+    <div class="navbar">
+      <NavBar />
+    </div>
   </div>
-  <NavBar />
+  <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
 </template>
 
 <style scoped>
-.kwatura {
+.main-container {
   width: 100%;
-  height: calc(100vh - 10%);
-  position: fixed;
+  height: 100vh;
   display: flex;
-  padding-block-start: 1rem;
-  animation: fade-in .8s;
+  flex-direction: column;
+  position: fixed;
 }
 
 .thoth {
@@ -134,6 +133,14 @@ export default {
   z-index: -10;
 }
 
+
+.container {
+  flex-grow: 1;
+  padding-block-start: 1rem;
+  padding-inline: 1rem;
+  animation: fade-in .8s;
+}
+
 @keyframes fade-in {
   0% {
     transform: translateX(5%);
@@ -146,94 +153,73 @@ export default {
   }
 }
 
-.input_side,
-.output_side {
-  width: 100%;
-  height: 100%;
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0rem;
+}
+
+.impindura {
+  height: 500px;
   display: flex;
   flex-direction: column;
-  padding: 4rem;
-  gap: .5rem;
-  user-select: none;
+  gap: 1rem;
 }
 
-h2 {
-  color: #f0f5f0;
-}
-
-p {
-  margin-block-start: -0.5rem;
-  color: #5e6671;
-  font-size: 14px;
-}
-
-.textarea {
-  all: unset;
-  background: #0d0d14;
-  color: rgb(235, 235, 235);
-  text-align: start;
-  padding: 1rem;
-  border-radius: .5rem;
-  transition: border .5s ease;
-  border: 1px solid #2b3648;
-  font-family: 'corbel';
-  height: 100%;
-  resize: none;
-}
-
-.textarea:focus {
-  resize: none;
-  border: 1px solid #219ef86d;
-}
-
-.screen {
+.input-section,
+.output-section {
   position: relative;
-  background: #0d0d14;
-  padding: 1rem;
-  border-radius: .5rem;
-  transition: border .5s ease;
-  border: 1px solid #2b3648;
-  font-family: 'corbel';
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   height: 100%;
-  overflow: auto;
 }
 
-.screen:hover {
-  cursor: pointer;
-  background: rgb(25, 25, 37);
-  border: 1px solid rgba(33, 158, 248, 0.428);
-}
-
-.guhindura {
+textarea {
   all: unset;
-  text-align: center;
-  padding: .5rem 1rem;
-  background: rgb(20, 91, 142);
-  color: #fff;
-  border-radius: .3rem;
-  cursor: pointer;
-  transition: background .5s ease;
-  opacity: 1;
-}
-
-.guhindura:hover {
-  background: rgb(33, 158, 248);
-}
-
-span {
-  background: #000;
-  color: #6f747b;
-  font-size: 16px;
+  background: #1b1b27;
+  color: rgb(235, 235, 235);
+  height: 100%;
   padding: .5rem;
-  border-radius: 100%;
+  border-radius: .5rem;
+  border: 1px solid #2b3648;
+}
+
+textarea:focus {
+  border: 1px solid #33558b;
+}
+
+button {
+  all: unset;
+  background: rgb(20, 91, 142);
+  padding: 0.5rem 1rem;
+  position: absolute;
+  bottom: 4%;
+  right: 2%;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: rgb(49, 134, 195);
+}
+
+.output-section {
+  background: #1b1b27;
+  border-radius: .5rem;
+  border: 1px solid #2b3648;
+  padding: 1rem;
+}
+
+.output-section:hover {
+  border: 1px solid #33558b;
 }
 
 .message {
   position: fixed;
-  bottom: 12%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.80);
+  background: rgba(0, 0, 0);
   color: #ffffff;
   padding: 1rem;
   display: flex;
@@ -241,13 +227,11 @@ span {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  animation: up .5s;
-  user-select: none;
-  z-index: 1000;
+  animation: up;
 }
 
 .message .bi-check-circle {
-  color: #2fbc38;
+  color: #40e14b;
 }
 
 @keyframes up {
@@ -256,75 +240,7 @@ span {
   }
 
   100% {
-    bottom: 12%;
-  }
-}
-
-@media(max-width:768px) {
-  .kwatura {
-    width: 100%;
-    height: calc(100vh - 10%);
-    display: block;
-    flex-direction: column;
-  }
-
-  .input_side,
-  .output_side {
-    width: 100%;
-    height: 50%;
-    padding: 1rem 1rem;
-  }
-
-  .textarea,
-  .textarea:focus {
-    height: 300px;
-    resize: none;
-  }
-}
-
-@media(min-width:600px) {
-  .kwatura {
-    display: flex;
-    /* flex-direction: column; */
-    padding-bottom: 3.5rem;
-  }
-
-  .input_side,
-  .output_side {
-    width: 100%;
-    height: 100%;
-    padding: .5rem 4rem;
-    gap: .5rem;
-  }
-
-  .textarea,
-  .textarea:focus {
-    height: 300px;
-    resize: none;
-  }
-
-  .guhindura {
-    padding: .5rem 0rem;
-  }
-
-  .message {
-    bottom: 17%;
-  }
-
-  @keyframes up {
-    0% {
-      bottom: 0%;
-    }
-
-    100% {
-      bottom: 17%;
-    }
-  }
-}
-
-@media (max-height:700px) {
-  NavBar {
-    display: none;
+    bottom: 10%;
   }
 }
 </style>

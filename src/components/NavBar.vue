@@ -13,11 +13,6 @@ export default {
                     'icon': 'bi-search',
                     'title': 'Rōndera',
                 },
-                // {
-                //     'link': '/insiguro',
-                //     'icon': 'bi-file-text',
-                //     'title': 'Insiguro',
-                // },
                 {
                     'link': '/igenamero',
                     'icon': 'bi-gear',
@@ -45,9 +40,9 @@ export default {
     background: rgb(18, 18, 28);
     border: 1px solid rgba(33, 158, 248, 0.428);
     width: 92%;
-    position: absolute;
-    left: 4%;
-    bottom: 2%;
+    display: block;
+    margin: auto;
+    margin-block-end: 1rem;
     padding: .3rem;
     border-radius: 50px;
     user-select: none;

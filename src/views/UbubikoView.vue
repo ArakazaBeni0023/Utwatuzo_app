@@ -92,44 +92,51 @@ export default {
 </script>
 
 <template>
-  <div class="ububiko">
-    <div class="search-bar">
-      <span>{{ urutonde.length }}
-        <p> / </p> {{ ububikoBwindome.length }}
-      </span>
-      <input type="search" v-model.trim="term" placeholder="Andika ngaha ijāmbo ukeneye" @keyup="filteredUrutonde(term)">
-      <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
+  <div class="main-container">
+    <div class="container">
+      <div class="search-bar">
+        <span>{{ urutonde.length }}
+          <p> / </p> {{ ububikoBwindome.length }}
+        </span>
+        <input type="search" v-model.trim="term" placeholder="Rōndera ijāmbo..." @keyup="filteredUrutonde(term)">
+        <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
+      </div>
+      <div class="words-container" v-if="urutonde.length">
+        <span v-if="lowerCase">
+          <div class="item" @click="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
+        </span>
+        <span v-if="upperCase">
+          <div class="item" @click="kwimura(word.toUpperCase())" v-for="word in urutonde" :key="word">{{ word.toUpperCase()
+          }}</div>
+        </span>
+      </div>
+      <div class="not_result" v-else>
+        <i class="bi bi-exclamation-circle"></i>
+        <p>Iryo jāmbo ntirishobóye kubóneka!</p>
+      </div>
+      <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
     </div>
-    <div class="container" v-if="urutonde.length">
-      <span v-if="lowerCase">
-        <div class="item" @click="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
-      </span>
-      <span v-if="upperCase">
-        <div class="item" @click="kwimura(word.toUpperCase())" v-for="word in urutonde" :key="word">{{ word.toUpperCase()
-        }}</div>
-      </span>
+    <div class="navbar">
+      <NavBar />
     </div>
-    <div class="not_result" v-else>
-      <i class="bi bi-exclamation-circle"></i>
-      <p>Iryo jāmbo ntirishobóye kubóneka!</p>
-    </div>
-    <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
   </div>
-  <NavBar />
 </template>
 
 <style scoped>
-.ububiko {
+.main-container {
   width: 100%;
-  height: calc(100vh - 12%);
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding-block-start: 2rem;
-  padding-inline: 4rem;
+}
+
+.container {
+  height: 600px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-block-start: 1rem;
+  padding-inline: 1rem;
   animation: fade-in .8s;
 }
 
@@ -143,6 +150,12 @@ export default {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0rem;
 }
 
 .search-bar {
@@ -159,7 +172,7 @@ export default {
 .search-bar span {
   background: #000;
   width: 20%;
-  padding: .9rem 1rem;
+  padding: .9rem 2.5rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   display: flex;
@@ -201,25 +214,26 @@ export default {
   color: #fff;
 }
 
-.container {
+.words-container {
   width: 100%;
   height: 100%;
   background: #383849;
   border: 1px solid #383849;
   padding: .5rem;
+  margin-top: 0.5rem;
   border-radius: 5px;
   overflow: auto;
   user-select: none;
 }
 
-.container span {
+.words-container span {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
 }
 
-.container span .item {
+.words-container span .item {
   background: #1b1b27;
   padding: .5rem 1rem;
   width: 100%;
@@ -229,11 +243,12 @@ export default {
   transition: background .5s ease-in-out;
 }
 
-.container span .item:hover {
+.words-container span .item:hover {
   background: #242431;
 }
 
 .not_result {
+  flex-grow: 1;
   height: auto;
   text-align: center;
   padding-top: 10rem;
@@ -249,7 +264,7 @@ export default {
   bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.800);
+  background: rgba(0, 0, 0);
   color: #ffffff;
   padding: 1rem;
   display: flex;
@@ -274,32 +289,6 @@ export default {
   100% {
     bottom: 12%;
     opacity: 1;
-  }
-}
-
-@media (max-width:768px) {
-  .ububiko {
-    padding-inline: 1rem;
-  }
-}
-
-@media (min-width:768px) {
-  .ububiko {
-    padding-inline: 4rem;
-  }
-
-  .message {
-    bottom: 18%;
-  }
-
-  @keyframes up {
-    0% {
-      bottom: 0%;
-    }
-
-    100% {
-      bottom: 18%;
-    }
   }
 }
 </style>

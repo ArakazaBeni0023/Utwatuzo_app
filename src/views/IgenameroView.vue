@@ -32,32 +32,42 @@ export default {
 </script>
 
 <template>
-    <div class="igenamero">
-        <div class="title">
-            <img src="../assets/images/utwatuzo-drk.png">
-            Igenamero
-        </div>
+    <div class="main-container">
         <div class="container">
-            <div class="row" @click="this.$router.push(`${set.to}`)" v-for="set in settings" :key="set">
-                <span>
-                    <i class="bi" :class="set.icon"></i>
-                    <p>{{ set.title }}</p>
-                </span>
-                <i class="bi" :class="set.chevron"></i>
+            <div class="title">
+                <img src="../assets/images/utwatuzo-drk.png">
+                Igenamero
+            </div>
+            <div class="settigns-container">
+                <div class="row" @click="this.$router.push(`${set.to}`)" v-for="set in settings" :key="set">
+                    <span>
+                        <i class="bi" :class="set.icon"></i>
+                        <p>{{ set.title }}</p>
+                    </span>
+                    <i class="bi" :class="set.chevron"></i>
+                </div>
             </div>
         </div>
+        <div class="navbar">
+            <NavBar />
+        </div>
     </div>
-    <NavBar />
 </template>
 
 <style scoped>
-.igenamero {
+.main-container {
     width: 100%;
-    height: 100%;
-    position: fixed;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+}
+
+.container {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     animation: fade-in .8s;
     user-select: none;
 }
@@ -72,6 +82,12 @@ export default {
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: .5rem 0rem;
 }
 
 .title {
@@ -97,13 +113,14 @@ export default {
     opacity: .15;
 }
 
-.container {
+.settigns-container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-inline: 4rem;
+    padding-block-start: 1rem;
+    padding-inline: 1rem;
 }
 
 .row {
@@ -131,11 +148,5 @@ export default {
 
 .row span p {
     color: #d1d3d5;
-}
-
-@media (max-width:768px) {
-    .container {
-        padding-inline: 1rem;
-    }
 }
 </style>
