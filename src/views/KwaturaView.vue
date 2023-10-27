@@ -243,4 +243,16 @@ button:hover {
     bottom: 10%;
   }
 }
+
+@media (min-width:768px) {
+  .container {
+    padding-inline: 2rem;
+  }
+
+  .impindura {
+    height: 100%;
+    display: flex;
+    flex-direction: inherit;
+  }
+}
 </style>
