@@ -35,7 +35,7 @@ export default {
         <div class="title">
             <img src="../assets/images/utwatuzo-drk.png">
             <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
-            <p>Twandikire</p>
+            <p>Twāndikire</p>
         </div>
         <div class="container">
             <a :href="item.link" target="_blank" v-for="(item, index) in platforms" :key="item" class="row"

@@ -16,7 +16,7 @@ export default {
                 {
                     'to': '/twandikire',
                     'icon': 'bi-people-fill',
-                    'title': 'Twandikire',
+                    'title': 'Twāndikire',
                     'chevron': 'bi-chevron-right'
                 },
                 {

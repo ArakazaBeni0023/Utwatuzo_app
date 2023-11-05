@@ -97,7 +97,7 @@ export default {
     <div class="container">
       <div class="impindura">
         <div class="input-section">
-          <textarea v-model="inPutText" placeholder="Andika ng'ăha icó ushâka ..."></textarea>
+          <textarea v-model="inPutText" placeholder="Andika ng'ăha ..."></textarea>
           <button v-if="inPutText.length != 0" @click="kwatura">Atura</button>
         </div>
         <div class="output-section" @click="kwimura">

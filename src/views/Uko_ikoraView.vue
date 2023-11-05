@@ -38,7 +38,7 @@ export default {
                     nûkó ritarimwo mū bubiko cânke
                     ritaturwa.</p> <br>
                 <p>
-                    Ijāmbo ukeneye ribonetse câ ufyonda kábiri ki kurikiranya kurí ryó kugíra uryimure.
+                    Ijāmbo ukeneye ribonetse câ ufyonda kurí ryó kugíra uryimure.
                 </p>
             </div>
         </div>
