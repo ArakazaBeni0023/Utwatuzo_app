@@ -122,7 +122,7 @@ export default {
 .row {
     width: 100%;
     height: 60px;
-    background: #1b1b27;
+    background: #0e0e15c8;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -134,7 +134,7 @@ export default {
 }
 
 .row:hover {
-    background: #262635;
+    background: #15151f;
 }
 
 .row span {

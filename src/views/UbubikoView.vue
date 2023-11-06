@@ -159,7 +159,7 @@ export default {
 }
 
 .search-bar {
-  background: #1b1b27;
+  background: #0e0e15c8;
   width: 100%;
   height: 46px;
   display: flex;
@@ -194,7 +194,7 @@ export default {
 }
 
 .search-bar input:focus {
-  background: #242431;
+  background: #15151f;
 }
 
 .search-bar .bi {
@@ -217,7 +217,7 @@ export default {
 .words-container {
   width: 100%;
   height: 100%;
-  background: #383849;
+  background: rgb(18, 18, 28);
   border: 1px solid #383849;
   padding: .5rem;
   margin-top: 0.5rem;
@@ -234,7 +234,7 @@ export default {
 }
 
 .words-container span .item {
-  background: #1b1b27;
+  background: rgb(14, 14, 21);
   padding: .5rem 1rem;
   width: 100%;
   display: flex;
@@ -244,7 +244,7 @@ export default {
 }
 
 .words-container span .item:hover {
-  background: #242431;
+  background: #15151f;
 }
 
 .not_result {

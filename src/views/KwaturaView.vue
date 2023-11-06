@@ -177,7 +177,7 @@ export default {
 
 textarea {
   all: unset;
-  background: #1b1b27;
+  background: #0e0e15c8;
   color: rgb(235, 235, 235);
   height: 100%;
   padding: .5rem;
@@ -204,7 +204,7 @@ button:hover {
 }
 
 .output-section {
-  background: #1b1b27;
+  background: #0e0e15c8;
   border-radius: .5rem;
   border: 1px solid #2b3648;
   padding: 1rem;
