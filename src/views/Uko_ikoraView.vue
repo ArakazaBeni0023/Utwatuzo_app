@@ -18,27 +18,26 @@ export default {
         </div>
         <div class="container">
             <div>
-                <h3>Ní guté nó hindura ivyó nanditse?</h3>
-                <p>Nkuko biboneka kuru papuro ushikirako <b>Kwâtura</b> hari ibice bibiri bikuru bikuru:</p><br>
+                <h3>Ní guté nó hīndúra ivyó nāndítse?</h3>
+                <p>Nkûkó bibonéka kuru pápuró ushikirakó <b>Kwâtura</b> hari ibicé bibiri bikurú bikurú:</p><br>
 
-                <h4>1. Ígicé câ mberé nahó wandika inyandiko zāwé ukenye kó
-                    hajákó utwâtuzo.</h4>
-                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gice câ mberé hama ucè ufyonda kurí bouton yîtwa
+                <h4>1. Ígicé cā mbere nâhó wāndíka inyandiko zāwe ukenéye kó hajakó utwâtuzo.</h4>
+                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gicé cā mberé hāa  ucè ufyônda kurí bouton yîtwa
                     <b>Atura</b>.
                 </p><br>
 
-                <h4>2. Ígicé câ kábiri nahó ubonera inyandiko ziriko utwâtuzo.</h4>
-                <p style="margin-left: 1.5rem;">Kugíra wimure inyandiko zāwé zatuye fyônda kunyandiko incuro zibiri
-                    zikurukirana ziri kugice câ kábiri.
+                <h4>2. Ígicé câ kábiri nahó ubonéra inyandiko ziríko utwâtuzo.</h4>
+                <p style="margin-left: 1.5rem;">Kugíra wîmúre inyandiko zāwé zatúye fyōnda kūnyandiko incúro zibiri
+                    zikurukirana zirí kugicé câ kábiri.
                 </p>
             </div>
             <div>
                 <h3>Ní guté nó rōndera ijāmbo?</h3>
-                <p>Ja kuru papuro rwó kurondererako hama wandike ijāmbo ukeneye ahabigenewe ijāmbo rica ryizana, ritabonetse
-                    nûkó ritarimwo mū bubiko cânke
-                    ritaturwa.</p> <br>
+                <p>Ja kuru papuro rwó kurōndererakó hāma wāndíke ijāmbo ukenéye ahãbigenewe ijāmbo rica ryîzana, rítabonétse
+                    nûkó ritarímwo mū bubiko cânke
+                    ritātúrwa.</p> <br>
                 <p>
-                    Ijāmbo ukeneye ribonetse câ ufyonda kurí ryó kugíra uryimure.
+                    Ijāmbo ukenéye ríbonetse câ ufyônda kurí ryó kugíra uryïmure.
                 </p>
             </div>
         </div>

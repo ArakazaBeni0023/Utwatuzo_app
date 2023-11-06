@@ -114,7 +114,7 @@ export default {
         <i class="bi bi-exclamation-circle"></i>
         <p>Iryo jāmbo ntirishobóye kubóneka!</p>
       </div>
-      <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyimutse</div>
+      <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyïmutse</div>
     </div>
     <div class="navbar">
       <NavBar />
