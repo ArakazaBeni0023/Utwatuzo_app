@@ -14,7 +14,7 @@ export default {
         <div class="title">
             <img src="../assets/images/utwatuzo-drk.png">
             <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
-            <p>Uko Ikora</p>
+            <p>Ukó Ikora</p>
         </div>
         <div class="container">
             <div>

@@ -93,11 +93,11 @@ export default {
 
 <template>
   <div class="main-container">
-    <img class="thoth" src="../assets/images/thoth-drk.png">
+    <img src="../assets/images/thoth-drk.png" class="thoth-img" alt="thoth">
     <div class="container">
       <div class="impindura">
         <div class="input-section">
-          <textarea v-model="inPutText" placeholder="Andika ng'ăha ..."></textarea>
+          <textarea v-model="inPutText" placeholder="Andika ng'ăha ..." name="textInput"></textarea>
           <button v-if="inPutText.length != 0" @click="kwatura">Atura</button>
         </div>
         <div class="output-section" @click="kwimura">
@@ -121,7 +121,7 @@ export default {
   position: fixed;
 }
 
-.thoth {
+.thoth-img {
   position: absolute;
   width: auto;
   height: 100%;
@@ -227,16 +227,16 @@ button:hover {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  animation: up;
+  animation: upMsg .5s;
 }
 
 .message .bi-check-circle {
   color: #40e14b;
 }
 
-@keyframes up {
+@keyframes upMsg {
   0% {
-    bottom: 0%;
+    bottom: 0;
   }
 
   100% {

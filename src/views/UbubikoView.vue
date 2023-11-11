@@ -272,7 +272,7 @@ export default {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  animation: up .5s;
+  animation: upMsg .5s;
   user-select: none;
 }
 
@@ -280,10 +280,10 @@ export default {
   color: #2fbc38;
 }
 
-@keyframes up {
+@keyframes upMsg {
   0% {
     opacity: 0;
-    bottom: 0%;
+    bottom: 0;
   }
 
   100% {

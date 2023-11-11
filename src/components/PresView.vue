@@ -24,7 +24,7 @@ export default {
     position: absolute;
     width: 120%;
     left: -30%;
-    bottom: 0%;
+    bottom: 0;
     opacity: .05;
     user-select: none;
 }

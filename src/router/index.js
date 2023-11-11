@@ -30,14 +30,14 @@ const routes = [
   {
     path: '/uko_ikora',
     meta: {
-      name: 'Amategeko',
+      name: 'Ukó Ikora',
     },
     component: () => import('../views/Uko_ikoraView.vue')
   },
   {
     path: '/twandikire',
     meta: {
-      name: 'Twandikire | Utwâtuzo',
+      name: 'Twāndikire',
     },
     component: () => import('../views/TwandikireView.vue')
   },
