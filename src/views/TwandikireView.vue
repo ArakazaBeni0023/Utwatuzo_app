@@ -1,52 +1,101 @@
+<script>
+export default {
+    data() {
+        return {
+            platforms: [
+                {
+                    'link': 'https://www.facebook.com/ubwatuzo',
+                    'icon': 'bi-facebook',
+                    'title': 'Facebook',
+                },
+                {
+                    'link': 'https://www.gmail.com/',
+                    'icon': 'bi-envelope',
+                    'title': 'G-mail',
+                },
+            ],
+            message: "",
+        }
+    },
+    methods: {
+        openGmail() {
+            const to = "arakazabenitresor@gmail.com";
+            const subject = "Iciyumviro cawe kuri Application Utwâtuzo";
+            const body = this.message;
+
+            const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(url, "_blank");
+        },
+    },
+};
+</script>
+
 <template>
-    <div class="title">
-        <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
-        <p>Twandikire</p>
-    </div>
     <div class="twandikire">
-        <a href="https://www.facebook.com/utwatuzo" target="_blank" class="row">
-            <span>
-                <i class="bi bi-facebook"></i>
-                <p>Facebook</p>
-            </span>
-        </a>
-        <a href="https://www.instagram.com/utwatuzo" target="_blank" class="row">
-            <span>
-                <i class="bi bi-instagram"></i>
-                <p>Instagram</p>
-            </span>
-        </a>
-        <a href="https://www.whatsapp.com/" target="_blank" class="row">
-            <span>
-                <i class="bi bi-whatsapp"></i>
-                <p>Whatsapp</p>
-            </span>
-        </a>
-        <a href="https://www.gmail.com/" target="_blank" class="row">
-            <span>
-                <i class="bi bi-envelope"></i>
-                <p>G-mail</p>
-            </span>
-        </a>
+        <div class="title">
+            <img src="../assets/images/utwatuzo-drk.png">
+            <i class="bi bi-arrow-left-short" @click="this.$router.push('/igenamero')"></i>
+            <p>Twāndikire</p>
+        </div>
+        <div class="container">
+            <a :href="item.link" target="_blank" v-for="(item, index) in platforms" :key="item" class="row"
+                @click="index === 3 ? openGmail() : null">
+                <span>
+                    <i class="bi" :class="item.icon"></i>
+                    <p>{{ item.title }}</p>
+                </span>
+            </a>
+        </div>
     </div>
-    <p class="copyright">Developed & Designed by<a href="https://www.rizzova.com/" target="_blank">Rizzova</a>Systems.
-    </p>
 </template>
 
 <style scoped>
+.twandikire {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fade-in .8s;
+    user-select: none;
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateX(5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
 .title {
     background: #0e0e15c8;
     color: #d1d3d5;
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: start;
     align-items: center;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 800;
     gap: 1rem;
     padding-inline-start: 1rem;
-    animation: fade-in 2s;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.title img {
+    position: absolute;
+    width: 55%;
+    top: -20%;
+    right: 0%;
+    opacity: .15;
 }
 
 .title .bi {
@@ -63,45 +112,29 @@
     background: #262635;
 }
 
-.twandikire {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    animation: fade-in 2s;
+.container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-block-start: 2rem;
-    padding-block-end: 4rem;
-    padding-inline: 1rem;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+    padding-inline: 4rem;
 }
 
 .row {
     width: 100%;
     height: 60px;
-    background: #1b1b27;
+    background: #0e0e15c8;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-inline: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #5e6671;
     text-decoration: none;
 }
 
 .row:hover {
-    background: #262635;
+    background: #15151f;
 }
 
 .row span {
@@ -111,5 +144,11 @@
 
 .row span p {
     color: #d1d3d5;
+}
+
+@media (max-width:768px) {
+    .container {
+        padding-inline: 1rem;
+    }
 }
 </style>

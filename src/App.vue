@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view/>
 </template>
 
 <style>
@@ -30,6 +30,11 @@
   background: #333344;
 }
 
+@font-face {
+  font-family: 'corbel';
+  src: url("./assets/fonts/corbel.otf");
+}
+
 body {
   background: #12121c;
   color: #e8e8e8;
@@ -48,11 +53,12 @@ body {
   letter-spacing: 2px;
   font-size: 10px;
   bottom: 2%;
+  user-select: none;
 }
 
 .copyright a {
   all: unset;
-  color: rgb(33, 158, 248);
+  color: rgb(32, 158, 248);
   margin-inline: 5px;
   cursor: pointer;
 }

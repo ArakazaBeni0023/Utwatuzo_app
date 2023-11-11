@@ -14,84 +14,152 @@ export default {
       casseType: true,
       normal: true,
       active: false,
+      messageVisible: false,
     }
   },
   mounted() {
-    /* var other = localStorage.getItem("ububikoBwindome")
-    if (other) {
-      this.ububikoBwindome = JSON.parse(other);
-    }*/
-    // axios.get("http://127.0.0.1:8000/Amajambos/").then((response) => { this.ububikoBwindome = response.data });
-
     this.ububikoBwindome = this.$store.state.mots
     this.urutonde = this.ububikoBwindome.sort().map(word => word.toLowerCase());
   },
   methods: {
     filteredUrutonde(term) {
       const filteredUrutonde = this.ububikoBwindome.filter(word => {
-        return word.toLowerCase().includes(term.toLowerCase());
+        const wordWithoutAccents = this.removeAccents(word.toLowerCase());
+        const termWithoutAccents = this.removeAccents(term.toLowerCase());
+        return wordWithoutAccents.includes(termWithoutAccents);
       });
       return this.urutonde = filteredUrutonde;
+    },
+    removeAccents(word) {
+      const accents = {
+        'â': 'a',
+        'à': 'a',
+        'á': 'a',
+        'ā': 'a',
+        'ã': 'a',
+        'ă': 'a',
+        'ä': 'a',
+        'é': 'e',
+        'è': 'e',
+        'ê': 'e',
+        'ë': 'e',
+        'ĕ': 'e',
+        'ē': 'e',
+        'î': 'i',
+        'ï': 'i',
+        'í': 'i',
+        'ì': 'i',
+        'ĩ': 'i',
+        'ĭ': 'i',
+        'ī': 'i',
+        'ô': 'o',
+        'ǒ': 'o',
+        'ö': 'o',
+        'ō': 'o',
+        'ó': 'o',
+        'ò': 'o',
+        'õ': 'o',
+        'ù': 'u',
+        'ú': 'u',
+        'û': 'u',
+        'ŭ': 'u',
+        'ü': 'u',
+        'ū': 'u',
+        'ũ': 'u',
+      };
+      return word.replace(/[âàáāãăäéèêëĕēîïíìĩĭīôǒöóòõöùúûŭüūũ]/g, match => accents[match]);
     },
     casse() {
       this.normal = !this.normal;
       this.active = !this.active;
       this.lowerCase = !this.lowerCase;
       this.upperCase = !this.upperCase;
+    },
+    afficherMessage() {
+      this.messageVisible = true;
+      setTimeout(() => {
+        this.messageVisible = false;
+      }, 2000);
+    },
+    kwimura(word) {
+      navigator.clipboard.writeText(word)
+        .then(() => {
+          this.afficherMessage();
+        });
     }
   }
 }
 </script>
 
 <template>
-  <div class="ububiko">
-    <div class="search-bar">
-      <span>{{ urutonde.length }} kurí {{ ububikoBwindome.length }}</span>
-      <input type="search" v-model.trim="term" placeholder="Rōndera ijāmbo" @keyup="filteredUrutonde(term)">
-      <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
+  <div class="main-container">
+    <div class="container">
+      <div class="search-bar">
+        <span>{{ urutonde.length }}
+          <p> / </p> {{ ububikoBwindome.length }}
+        </span>
+        <input type="search" v-model.trim="term" placeholder="Rōndera ijāmbo..." @keyup="filteredUrutonde(term)">
+        <i class="bi bi-type" v-bind:class="{ 'active': active, 'bi': normal }" @click="casse"></i>
+      </div>
+      <div class="words-container" v-if="urutonde.length">
+        <span v-if="lowerCase">
+          <div class="item" @click="kwimura(word)" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
+        </span>
+        <span v-if="upperCase">
+          <div class="item" @click="kwimura(word.toUpperCase())" v-for="word in urutonde" :key="word">{{ word.toUpperCase()
+          }}</div>
+        </span>
+      </div>
+      <div class="not_result" v-else>
+        <i class="bi bi-exclamation-circle"></i>
+        <p>Iryo jāmbo ntirishobóye kubóneka!</p>
+      </div>
+      <div v-if="messageVisible" class="message"><i class="bi bi-check-circle"></i> Vyïmutse</div>
     </div>
-    <div class="container" v-if="urutonde.length">
-      <span v-if="lowerCase">
-        <div class="item" v-for="word in urutonde" :key="word">{{ word.toLowerCase() }}</div>
-      </span>
-      <span v-if="upperCase">
-        <div class="item" v-for="word in urutonde" :key="word">{{ word.toUpperCase() }}</div>
-      </span>
-    </div>
-    <div class="not_result" v-else>
-      <i class="bi bi-exclamation-circle"></i>
-      <p>Iryo jāmbo ntirishobóye kubóneka!</p>
+    <div class="navbar">
+      <NavBar />
     </div>
   </div>
-  <NavBar />
 </template>
 
 <style scoped>
-.ububiko {
+.main-container {
   width: 100%;
   height: 100vh;
-  position: relative;
-  animation: fade-in 2s;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding-block-start: 2rem;
-  padding-block-end: 4rem;
+}
+
+.container {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-block-start: 1rem;
   padding-inline: 1rem;
+  animation: fade-in .8s;
 }
 
 @keyframes fade-in {
   0% {
+    transform: translateX(5%);
     opacity: 0;
   }
 
   100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0rem;
+}
+
 .search-bar {
-  background: #1b1b27;
+  background: #0e0e15c8;
   width: 100%;
   height: 46px;
   display: flex;
@@ -104,23 +172,29 @@ export default {
 .search-bar span {
   background: #000;
   width: 20%;
-  padding: .9rem 1rem;
+  padding: .9rem 2.5rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 14px;
+  user-select: none;
+}
+
+.search-bar span p {
+  margin-inline: .2rem;
 }
 
 .search-bar input {
   all: unset;
   width: 83%;
-  width: 100%;
   padding: .8rem .5rem;
   transition: background .5s ease;
 }
 
 .search-bar input:focus {
-  background: #242431;
+  background: #15151f;
 }
 
 .search-bar .bi {
@@ -140,36 +214,44 @@ export default {
   color: #fff;
 }
 
-.container {
+.words-container {
   width: 100%;
-  height: 90%;
-  background: #383849;
+  height: 100%;
+  background: rgb(18, 18, 28);
   border: 1px solid #383849;
-  padding: 1rem .5rem;
+  padding: .5rem;
+  margin-top: 0.5rem;
   border-radius: 5px;
   overflow: auto;
+  user-select: none;
 }
 
-.container span {
+.words-container span {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
 }
 
-.container span .item {
-  background: #1b1b27;
+.words-container span .item {
+  background: rgb(14, 14, 21);
   padding: .5rem 1rem;
   width: 100%;
   display: flex;
   justify-content: center;
   flex: 1 1 100px;
+  transition: background .5s ease-in-out;
+}
+
+.words-container span .item:hover {
+  background: #15151f;
 }
 
 .not_result {
+  flex-grow: 1;
   height: auto;
   text-align: center;
-  padding-top: 20rem;
+  padding-top: 10rem;
   color: #717178;
 }
 
@@ -177,20 +259,43 @@ export default {
   font-size: 3.5rem;
 }
 
-/* @media (max-width:768px) {
-  .search-bar {
-    width: 92%;
-    left: 4%;
+.message {
+  position: fixed;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0);
+  color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  gap: .5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: upMsg .5s;
+  user-select: none;
+}
+
+.message .bi-check-circle {
+  color: #2fbc38;
+}
+
+@keyframes upMsg {
+  0% {
+    opacity: 0;
+    bottom: 0;
   }
 
-  .search-bar span {
-    width: 41%;
-    padding: .9rem .5rem;
+  100% {
+    bottom: 12%;
+    opacity: 1;
   }
+}
 
+@media (min-width:768px) {
   .container {
-    left: 4%;
-    width: 92%;
+    height: 300px;
+    padding-inline: 2rem;
   }
-} */
+}
 </style>
