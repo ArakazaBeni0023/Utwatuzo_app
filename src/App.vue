@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
@@ -18,7 +18,7 @@
 
 ::-webkit-scrollbar {
   width: .6rem;
-}
+} 
 
 ::-webkit-scrollbar-thumb {
   background: #252533;
@@ -36,9 +36,10 @@
 }
 
 body {
-  background: #12121c;
+  background: rgb(18, 18, 28);
   color: #e8e8e8;
   font-family: 'corbel';
+  overflow: hidden;
 }
 
 .copyright {
