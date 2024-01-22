@@ -1,1 +1,13 @@
-{"appId":"dev.ksquad.utwatuzo","appName":"Utwatuzo","bundledWebRuntime":false,"webDir":"dist"}
+{
+  "appId": "dev.ksquad.utwatuzo",
+  "appName": "Utwatuzo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
