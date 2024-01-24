@@ -132,12 +132,13 @@ export default {
 }
 
 .container {
+  margin: auto;
   height: 550px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding-block-start: 1rem;
-  padding-inline: 1rem;
+  padding-block-start: 3rem;
+  padding-block-end: .5rem;
   animation: fade-in .8s;
 }
 
@@ -295,8 +296,13 @@ export default {
 
 @media (min-width:768px) {
   .container {
-    height: 300px;
-    padding-inline: 2rem;
+    width: 92%;
+  }
+}
+
+@media (max-width:768px) {
+  .container {
+    width: 92%;
   }
 }
 </style>

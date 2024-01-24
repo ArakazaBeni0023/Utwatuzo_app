@@ -73,7 +73,6 @@ export default {
     }
 }
 
-
 .title {
     background: #0e0e15c8;
     color: #d1d3d5;
@@ -116,11 +115,11 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-inline: 4rem;
 }
 
 .row {
-    width: 100%;
+    margin: auto;
+    width: 92%;
     height: 60px;
     background: #0e0e15c8;
     border-radius: 5px;
@@ -147,8 +146,8 @@ export default {
 }
 
 @media (max-width:768px) {
-    .container {
-        padding-inline: 1rem;
+    .row {
+        width: 92%;
     }
 }
 </style>

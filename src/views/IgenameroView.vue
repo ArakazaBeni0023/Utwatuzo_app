@@ -115,13 +115,13 @@ export default {
 }
 
 .settigns-container {
-    width: 100%;
+    margin: auto;
+    width: 92%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding-block-start: 1rem;
-    padding-inline: 1rem;
 }
 
 .row {
@@ -149,5 +149,11 @@ export default {
 
 .row span p {
     color: #d1d3d5;
+}
+
+@media (max-width:768px) {
+    .settigns-container {
+        width: 92%;
+    }
 }
 </style>

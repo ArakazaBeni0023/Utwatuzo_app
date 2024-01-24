@@ -9,7 +9,7 @@ export default {
 
 <template>
     <div class="aboturibo">
-        <PresView text="Version 1.0" />
+        <PresView text="" version="version 1.0" />
     </div>
 </template>
 

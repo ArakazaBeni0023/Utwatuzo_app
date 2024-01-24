@@ -1,7 +1,8 @@
 <script>
 export default {
     props: {
-        text: String
+        text: String,
+        version: String
     }
 }
 </script>
@@ -13,10 +14,12 @@ export default {
         <div class="text">
             <img class="brand_name" src="../assets/images/utwatuzo.png" alt="brand-name">
             <p>{{ text }}</p>
+            <p>{{ version }}</p>
         </div>
     </div>
-    <p class="copyright">Developed & Designed by <a href="https://www.rizzova.com/" target="_blank"> Rizzova </a>
-        Systems.</p>
+    <p class="copyright">© 2024 Developed & Designed by <a href="https://www.rizzova.com/" target="_blank"> Rizzova
+        
+        Systems</a>.</p>
 </template>
 
 <style scoped>

@@ -136,7 +136,7 @@ export default {
 
 .container {
   flex-grow: 1;
-  padding-block-start: 1rem;
+  padding-block-start: 3rem;
   padding-inline: 1rem;
   animation: fade-in .8s;
 }
@@ -160,6 +160,7 @@ export default {
 }
 
 .impindura {
+  margin: auto;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -246,13 +247,24 @@ button:hover {
 
 @media (min-width:768px) {
   .container {
-    padding-inline: 2rem;
+    padding-inline: 0rem;
   }
 
   .impindura {
-    height: 100%;
+    width: 92%;
     display: flex;
     flex-direction: inherit;
+  }
+}
+
+@media (max-width:768px) {
+  .container {
+    padding-inline: 0;
+  }
+
+  .impindura {
+    width: 92%;
+    /* height: 100%; */
   }
 }
 </style>

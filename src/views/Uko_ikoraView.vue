@@ -22,7 +22,7 @@ export default {
                 <p>Nkûkó bibonéka kuru pápuró ushikirakó <b>Kwâtura</b> hari ibicé bibiri bikurú bikurú:</p><br>
 
                 <h4>1. Ígicé cā mbere nâhó wāndíka inyandiko zāwe ukenéye kó hajakó utwâtuzo.</h4>
-                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gicé cā mberé hāa  ucè ufyônda kurí bouton yîtwa
+                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gicé cā mberé hāa ucè ufyônda kurí bouton yîtwa
                     <b>Atura</b>.
                 </p><br>
 
@@ -118,13 +118,13 @@ export default {
 }
 
 .container {
-    width: 100%;
+    margin: auto;
+    width: 92%;
     height: 100%;
     display: flex;
     flex-direction: column;
     text-align: justify;
     gap: 1rem;
-    padding-inline: 4rem;
     padding-bottom: 2rem;
 }
 
@@ -148,7 +148,7 @@ export default {
 
 @media (max-width:768px) {
     .container {
-        padding-inline: 1rem;
+        width: 92%;
     }
 }
 </style>

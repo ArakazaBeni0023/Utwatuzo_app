@@ -18,7 +18,7 @@
 
 ::-webkit-scrollbar {
   width: .6rem;
-} 
+}
 
 ::-webkit-scrollbar-thumb {
   background: #252533;
@@ -40,6 +40,7 @@ body {
   color: #e8e8e8;
   font-family: 'corbel';
   overflow: hidden;
+  user-select: none;
 }
 
 .copyright {
