@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/kwatura',
     meta: {
-      name: 'Kwâtura',
+      name: 'Kwătura',
     },
     component: () => import('../views/KwaturaView.vue')
   },
@@ -20,13 +20,39 @@ const routes = [
     },
     component: () => import('../views/UbubikoView.vue')
   },
+  // insiguro
   {
     path: '/insiguro',
     meta: {
-      name: 'Insiguro ',
+      name: 'Insígūro ',
     },
     component: () => import('../views/InsiguroView.vue')
   },
+  //utwatuzo n'iki
+  {
+    path: '/utwatuzo_n_iki',
+    meta: {
+      name: 'Utwâtuzo ní ikí',
+    },
+    component: () => import('../views/UtwatuzoNikiView.vue')
+  },
+  //insiguro y utwatuzo
+  {
+    path: '/insiguro_y_utwatuzo',
+    meta: {
+      name: "Insígūro y'ûtwâtuzo",
+    },
+    component: () => import('../views/InsiguroYutwatuzoView.vue')
+  },
+  //iga kwatura
+  {
+    path: '/iga_kwatura',
+    meta: {
+      name: "Ígá kwătura",
+    },
+    component: () => import('../views/IgaKwaturaView.vue')
+  },
+  // uko ikora
   {
     path: '/uko_ikora',
     meta: {
@@ -54,7 +80,8 @@ const routes = [
       name: 'Igenamero',
     },
     component: () => import('../views/IgenameroView.vue')
-  }
+  },
+
 ]
 
 const router = createRouter({

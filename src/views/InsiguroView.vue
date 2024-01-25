@@ -6,40 +6,62 @@ export default {
     },
     data() {
         return {
-            lessons: ["Icirwa ca mbere", "Icirwa ca kabiri", "Icirwa ca gatatu"]
+            lessons: [
+                {
+                    'to': '/utwatuzo_n_iki',
+                    'title': 'Utwâtuzo ní ikí ?',
+                    'chevron': 'bi-chevron-right'
+                },
+                {
+                    'to': '/insiguro_y_utwatuzo',
+                    'title': "Insígūro y'ûtwâtuzo",
+                    'chevron': 'bi-chevron-right'
+                },
+                {
+                    'to': '/iga_kwatura',
+                    'title': 'Ígá kwătura',
+                    'chevron': 'bi-chevron-right'
+                },
+                {
+                    'to': '/imyimenyerezo',
+                    'title': "Imyîmenyerezo y'ûtwâtuzo",
+                    'chevron': 'bi-chevron-right'
+                },
+            ]
         }
     }
 }
 </script>
 
 <template>
-    <div class="insiguro">
-        <div class="title">
-            <img src="../assets/images/utwatuzo-drk.png">
-            Insiguro
-        </div>
+    <div class="main-container ">
         <div class="container">
-            <div class="row" v-for="item in lessons" :key="item">
-                <span>
-                    <p>{{ item }}</p>
-                </span>
-                <i class="bi bi-chevron-right"></i>
+            <div class="title">
+                <img src="../assets/images/utwatuzo-drk.png">
+                Insígūro
+            </div>
+            <div class="lessons-container">
+                <div class="row" @click="this.$router.push(`${lesson.to}`)" v-for="lesson in lessons" :key="lesson">
+                    <span>
+                        <p>{{ lesson.title }}</p>
+                    </span>
+                    <i class="bi" :class="lesson.chevron"></i>
+                </div>
             </div>
         </div>
+        <div class="navbar">
+            <NavBar />
+        </div>
     </div>
-    <NavBar />
 </template>
 
 <style scoped>
-.insiguro {
+.main-container {
     width: 100%;
     height: 100vh;
-    position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    animation: fade-in .8s;
-    user-select: none;
+    overflow: hidden;
 }
 
 @keyframes fade-in {
@@ -64,7 +86,7 @@ export default {
     align-items: center;
     font-size: 20px;
     font-weight: 800;
-    user-select: none;
+
     position: relative;
     overflow: hidden;
 }
@@ -78,48 +100,55 @@ export default {
 }
 
 .container {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: fade-in .8s;
+
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: .5rem 0rem;
+}
+
+.lessons-container {
+    margin: auto;
+    width: 92%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-inline: 4rem;
+    padding-block-start: 1rem;
 }
 
 .row {
     width: 100%;
     height: 60px;
-    background: #1b1b27;
+    background: #0e0e15c8;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-inline: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #5e6671;
     text-decoration: none;
 }
 
 .row:hover {
-    background: #262635;
+    background: #15151f;
 }
 
 .row span {
     display: flex;
-    gap: .5rem;
+    gap: 1rem;
 }
 
 .row span p {
     color: #d1d3d5;
 }
-
-@media (max-width:768px) {
-    .container {
-        padding-inline: 1rem;
-    }
-}
-
-@media(max-width:912px) {
-    .container {
-        padding-inline: 2rem;
-    }
-}
-</style>
+</style> 

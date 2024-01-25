@@ -58,7 +58,7 @@ export default {
     flex-direction: column;
     gap: 1rem;
     animation: fade-in .8s;
-    user-select: none;
+
 }
 
 @keyframes fade-in {
@@ -84,7 +84,7 @@ export default {
     font-weight: 800;
     gap: 1rem;
     padding-inline-start: 1rem;
-    user-select: none;
+
     position: relative;
     overflow: hidden;
 }

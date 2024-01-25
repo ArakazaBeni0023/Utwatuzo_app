@@ -1,13 +1,3 @@
-<script>
-export default {
-    data() {
-        return {
-
-        }
-    }
-}
-</script>
-
 <template>
     <div class="uko_ikora">
         <img class="thoth" src="../assets/images/thoth-drk.png">
@@ -17,20 +7,27 @@ export default {
             <p>Ukó Ikora</p>
         </div>
         <div class="container">
-            <div>
-                <h3>Ní guté nó hīndúra ivyó nāndítse?</h3>
-                <p>Nkûkó bibonéka kuru pápuró ushikirakó <b>Kwâtura</b> hari ibicé bibiri bikurú bikurú:</p><br>
+            <h3>Ní guté nó hīndúra ivyó nāndítse?</h3>
+            <p>Nkûkó bibonéka kuru pápuró ushikirakó <b>Kwătura</b> hari ibicé bitatu bikurú bikurú:</p><br>
 
-                <h4>1. Ígicé cā mbere nâhó wāndíka inyandiko zāwe ukenéye kó hajakó utwâtuzo.</h4>
-                <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gicé cā mberé hāa ucè ufyônda kurí bouton yîtwa
-                    <b>Atura</b>.
-                </p><br>
+            <h4>1. Ígicé cā mbere nâhó wāndíka inyandiko zāwe ukenéye kó hajakó utwâtuzo.</h4>
+            <p style="margin-left: 1.5rem;">Andika amajāmbo yāwe kū gicé cā mberé hāa ucè ufyônda kurí bouton yîtwa
+                <b>Atura</b>.
+            </p><br>
 
-                <h4>2. Ígicé câ kábiri nahó ubonéra inyandiko ziríko utwâtuzo.</h4>
-                <p style="margin-left: 1.5rem;">Kugíra wîmúre inyandiko zāwé zatúye fyōnda kūnyandiko incúro zibiri
-                    zikurukirana zirí kugicé câ kábiri.
-                </p>
-            </div>
+            <h4>2. Ígicé câ kábiri nahó urōndérera inyandiko ziríko utwâtuzo</h4>
+            <p style="margin-left: 1.5rem;">Kugíra wîmúre inyandiko zāwé zatúye fyōnda kūnyandiko incúro zibiri
+                zikurukirana zirí kugicé câ kábiri.
+            </p><br>
+            <h4>3. Ígicé câ gátatu nahó wigira ivyērekéye utwâtuzo</h4><br>
+            <p><b>Ahó tumenya:</b></p>
+            <ul style="margin-left: 1.5rem;">
+                <li>Utwâtuzo ní ikí?</li>
+                <li>Insígūro y'ûtwâtuzo</li>
+                <li>Kwïga kwătura</li>
+                <li>Imyîmenyerezo y'ûtwâtuzo</li>
+            </ul>
+            <br>
             <div>
                 <h3>Ní guté nó rōndera ijāmbo?</h3>
                 <p>Ja kuru papuro rwó kurōndererakó hāma wāndíke ijāmbo ukenéye ahãbigenewe ijāmbo rica ryîzana, rítabonétse
@@ -52,7 +49,6 @@ export default {
     flex-direction: column;
     gap: 1rem;
     animation: fade-in .8s;
-    user-select: none;
 }
 
 @keyframes fade-in {
@@ -90,7 +86,7 @@ export default {
     gap: 1rem;
     padding-inline-start: 1rem;
     position: relative;
-    user-select: none;
+
     overflow: hidden;
 }
 
@@ -121,10 +117,7 @@ export default {
     margin: auto;
     width: 92%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
     text-align: justify;
-    gap: 1rem;
     padding-bottom: 2rem;
 }
 
@@ -143,12 +136,5 @@ export default {
 
 .container p b {
     color: #fff;
-}
-
-
-@media (max-width:768px) {
-    .container {
-        width: 92%;
-    }
 }
 </style>

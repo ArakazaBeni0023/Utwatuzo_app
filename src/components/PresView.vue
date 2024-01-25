@@ -18,8 +18,8 @@ export default {
         </div>
     </div>
     <p class="copyright">© 2024 Developed & Designed by <a href="https://www.rizzova.com/" target="_blank"> Rizzova
-        
-        Systems</a>.</p>
+
+            Systems</a>.</p>
 </template>
 
 <style scoped>
@@ -29,7 +29,7 @@ export default {
     left: -30%;
     bottom: 0;
     opacity: .05;
-    user-select: none;
+
 }
 
 .brand {

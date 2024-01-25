@@ -181,7 +181,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  user-select: none;
+
 }
 
 .search-bar span p {
@@ -219,13 +219,13 @@ export default {
 .words-container {
   width: 100%;
   height: 100%;
-  background: rgb(18, 18, 28);
+  background: var(--background);
   border: 1px solid #383849;
   padding: .5rem;
   margin-top: 0.5rem;
   border-radius: 5px;
   overflow: auto;
-  user-select: none;
+
 }
 
 .words-container span {
@@ -275,7 +275,7 @@ export default {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   animation: upMsg .5s;
-  user-select: none;
+
 }
 
 .message .bi-check-circle {

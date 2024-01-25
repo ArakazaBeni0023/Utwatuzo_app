@@ -97,7 +97,7 @@ export default {
     <div class="container">
       <div class="impindura">
         <div class="input-section">
-          <textarea v-model="inPutText" placeholder="Andika ng'ăha ..." name="textInput"></textarea>
+          <textarea v-model="inPutText" placeholder="Andiká ng'ăha ..." name="textInput"></textarea>
           <button v-if="inPutText.length != 0" @click="kwatura">Atura</button>
         </div>
         <div class="output-section" @click="kwimura">
@@ -129,7 +129,7 @@ export default {
   right: -40%;
   opacity: .06;
   transform: rotateY(180deg);
-  user-select: none;
+
   z-index: -10;
 }
 

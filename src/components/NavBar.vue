@@ -6,13 +6,18 @@ export default {
                 {
                     'link': '/kwatura',
                     'icon': 'bi-translate',
-                    'title': 'Kwâtura',
+                    'title': 'Kwătura',
                 },
                 {
                     'link': '/ububiko',
                     'icon': 'bi-search',
                     'title': 'Rōndera',
                 },
+                /*  {
+                    'link': '/insiguro',
+                    'icon': 'bi-book',
+                    'title': 'Insígūro',
+                }, */
                 {
                     'link': '/igenamero',
                     'icon': 'bi-gear',
@@ -37,7 +42,7 @@ export default {
 
 <style scoped>
 .nav {
-    background: rgb(18, 18, 28);
+    background: var(--background);
     border: 1px solid rgba(33, 158, 248, 0.428);
     width: 92%;
     display: block;
@@ -45,7 +50,7 @@ export default {
     margin-block-end: 1rem;
     padding: .3rem;
     border-radius: 50px;
-    user-select: none;
+
     box-shadow: 0px 3px 9px #00000076;
     z-index: 1;
 }

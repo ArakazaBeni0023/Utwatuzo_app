@@ -70,7 +70,7 @@ export default {
     display: flex;
     flex-direction: column;
     animation: fade-in .8s;
-    user-select: none;
+
 }
 
 @keyframes fade-in {
@@ -101,7 +101,7 @@ export default {
     align-items: center;
     font-size: 20px;
     font-weight: 800;
-    user-select: none;
+
     position: relative;
     overflow: hidden;
 }

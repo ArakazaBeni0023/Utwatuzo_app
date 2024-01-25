@@ -21,7 +21,7 @@ export default {
     justify-content: center;
     height: 100vh;
     animation: fade-in 3s;
-    user-select: none;
+
     position: relative;
 }
 
