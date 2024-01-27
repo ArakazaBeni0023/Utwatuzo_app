@@ -241,6 +241,7 @@ export default createStore({
       "inkĭngi",
       "inkūnda",
       "inkόno",
+      "insígūro",
       "inkόrakozi",
       "inshiramazīnda",
       "intwâri",
