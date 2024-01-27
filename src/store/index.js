@@ -644,7 +644,6 @@ export default createStore({
       "abarâmbiwe",
       "abarí",
       "abarírīmvyi",
-      "abarírīmyi",
       "abasânganguzi",
       "abaséka",
       "abasígaye",

@@ -10,8 +10,7 @@
             <h4>ITEGEREZE NÊZÁ</h4>
             <p>
                 Iki gicé si icó kwĭgīsha imvúgo kukó Abarŭndi böse ntibavuga amajāmbo yöse kumwé. Akarorero: Hari abavúga
-                <b>umugóre</b> abăndi na bó bakavuga <b>umugoré</b>. Emmanuel Nkēngurutse Mr N yatégūye iyi nyandiko avuga
-                <b>umugoré</b>.
+                <b>umugóre</b> abăndi na bó bakavuga <b>umugoré</b>.
             </p><br>
             <p>
                 Rēró intūmbēro y'ĭki gicé ni ukwĭgīsha utwâtuzo kugíra abāntu bamenyé ingéne bōkwāndíka ivyó būmvîse ku
@@ -108,7 +107,7 @@
                         <li>shinga => shînga (âna)</li>
                         <li>mate => máte (sóre)</li>
                         <li>teka => tēká (nīndé)</li>
-                        <span>✔ <b>umushîngantăhe</b></span>
+                        <span>✔ <b>umushîngamátēká</b></span>
                     </ul>
                 </div>
             </div>

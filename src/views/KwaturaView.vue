@@ -187,7 +187,7 @@ textarea {
 }
 
 textarea:focus {
-  border: 1px solid #33558b;
+  border: 1px solid var(--bd-color);
 }
 
 button {
@@ -212,7 +212,7 @@ button:hover {
 }
 
 .output-section:hover {
-  border: 1px solid #33558b;
+  border: 1px solid var(--bd-color);
 }
 
 .message {

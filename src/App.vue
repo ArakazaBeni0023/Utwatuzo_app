@@ -18,6 +18,11 @@
   --text: #81818d;
   --link: #5a5aff;
   --link-hover: #3939f9;
+  --bd-color: #33558b;
+  --nav-bd: #219ef86d;
+  --nav-link-color: #e1dfdf95;
+  --nav-link-hover: #023d6762;
+  --nav-link-active: #219ef8;
 }
 
 /* scrollbar */

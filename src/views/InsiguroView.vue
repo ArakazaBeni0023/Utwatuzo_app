@@ -21,7 +21,12 @@ export default {
                     'to': '/iga_kwatura',
                     'title': 'Ígá kwătura',
                     'chevron': 'bi-chevron-right'
-                }
+                },
+                {
+                    'to': '/imyimenyerezo',
+                    'title': "Imyîmenyerezo y'ûtwâtuzo",
+                    'chevron': 'bi-chevron-right'
+                },
             ]
         }
     }

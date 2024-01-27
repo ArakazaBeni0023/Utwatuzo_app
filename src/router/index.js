@@ -2,10 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import KwakiraView from '../views/KwakiraView.vue'
 
 const routes = [
+  // kwakira
   {
     path: '/',
     component: KwakiraView
   },
+  // kwatura
   {
     path: '/kwatura',
     meta: {
@@ -13,6 +15,7 @@ const routes = [
     },
     component: () => import('../views/KwaturaView.vue')
   },
+  // ububiko
   {
     path: '/ububiko',
     meta: {
@@ -52,6 +55,14 @@ const routes = [
     },
     component: () => import('../views/IgaKwaturaView.vue')
   },
+  //imyimenyerezo
+  {
+    path: '/imyimenyerezo',
+    meta: {
+      name: "Imyîmenyerezo y'ûtwâtuzo",
+    },
+    component: () => import('../views/ImyimenyerezoView.vue')
+  },
   // uko ikora
   {
     path: '/uko_ikora',
@@ -60,6 +71,7 @@ const routes = [
     },
     component: () => import('../views/Uko_ikoraView.vue')
   },
+  //twandikire
   {
     path: '/twandikire',
     meta: {
@@ -67,6 +79,7 @@ const routes = [
     },
     component: () => import('../views/TwandikireView.vue')
   },
+  // abo turibo
   {
     path: '/aboturibo',
     meta: {
@@ -74,6 +87,7 @@ const routes = [
     },
     component: () => import('../views/AboTuribo.vue')
   },
+  // igenamero
   {
     path: '/igenamero',
     meta: {

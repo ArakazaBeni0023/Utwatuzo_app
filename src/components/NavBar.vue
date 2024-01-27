@@ -13,11 +13,11 @@ export default {
                     'icon': 'bi-search',
                     'title': 'Rōndera',
                 },
-                /*  {
+                {
                     'link': '/insiguro',
                     'icon': 'bi-book',
                     'title': 'Insígūro',
-                }, */
+                },
                 {
                     'link': '/igenamero',
                     'icon': 'bi-gear',
@@ -43,7 +43,7 @@ export default {
 <style scoped>
 .nav {
     background: var(--background);
-    border: 1px solid rgba(33, 158, 248, 0.428);
+    border: 1px solid var(--nav-bd);
     width: 92%;
     display: block;
     margin: auto;
@@ -67,7 +67,7 @@ export default {
     font-size: 15px;
     letter-spacing: 1px;
     text-decoration: none;
-    color: rgba(225, 223, 223, 0.585);
+    color: var(--nav-link-color);
     line-height: 1;
     display: flex;
     justify-content: center;
@@ -80,7 +80,7 @@ export default {
 }
 
 .buttons .place:hover {
-    background: rgba(2, 61, 103, 0.383);
+    background: var(--nav-link-hover);
 }
 
 .buttons .place span {
@@ -95,8 +95,8 @@ export default {
 
 /* .buttons .place:hover, */
 .buttons .place.router-link-exact-active {
-    background: rgb(33, 158, 248);
-    color: rgb(255, 255, 255);
+    background: var(--nav-link-active);
+    color: var(--light);
     column-gap: 0.5em;
 }
 
