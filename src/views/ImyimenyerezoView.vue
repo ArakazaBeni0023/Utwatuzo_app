@@ -67,6 +67,7 @@ export default {
         },
         check() {
             if (this.ijambo != '') {
+                this.keyboardType[0];
                 this.kosora = this.ikibazo;
                 if (this.ijambo === this.ikibazo) {
                     console.log(this.ijambo === this.ikibazo);
@@ -89,6 +90,7 @@ export default {
     },
 }
 </script>
+
 <template>
     <div class="main">
         <img class="thoth" src="../assets/images/thoth-drk.png">
@@ -147,10 +149,10 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* animation: fade-in .8s; */
+    animation: in .8s;
 }
 
-@keyframes fade-in {
+@keyframes in {
     0% {
         transform: translateX(5%);
         opacity: 0;

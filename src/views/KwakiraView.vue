@@ -14,7 +14,7 @@ export default {
 
 <template>
     <div class="kwakira">
-        <PresView text="Ubwîzá bw'amajāmbo y'Íkirŭndi." />
+        <PresView text="Ubwîzá bw'amajāmbo y'Íkirŭndi" />
     </div>
 </template>
 
