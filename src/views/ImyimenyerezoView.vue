@@ -69,6 +69,7 @@ export default {
             if (this.ijambo != '') {
                 this.kosora = this.ikibazo;
                 if (this.ijambo === this.ikibazo) {
+                    console.log(this.ijambo === this.ikibazo);
                     this.afficherMessage();
                     setTimeout(() => {
                         this.other();
