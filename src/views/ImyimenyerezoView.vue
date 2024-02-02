@@ -10,17 +10,17 @@ export default {
                         'f', 'g', 'h', 'i', 'j',
                         'k', 'm', 'n', 'o', 'p',
                         'r', 's', 't', 'u', 'v',
-                        'w', 'y', 'z'
+                        'w', 'y', 'z', "'"
                     ],
                 },
                 {
                     title: 'Utwâtuzo',
                     ububiko: [
-                        'à', 'á', 'â', 'ā', 'ä', 'ă',
-                        'é', 'è', 'ê', 'ë', 'ĕ', 'ē',
-                        'î', 'ï', 'í', 'ì', 'ĭ', 'ī',
-                        'ô', 'ǒ', 'ö', 'ō', 'ó', 'ò',
-                        'ù', 'ú', 'û', 'ŭ', 'ü', 'ū',
+                        'à', 'á', 'â', 'ā', 'ă', 'ä',
+                        'ì', 'í', 'î', 'ī', 'ĭ', 'ï',
+                        'ù', 'ú', 'û', 'ū', 'ŭ', 'ü', 
+                        'ò', 'ó', 'ô', 'ō', 'ǒ', 'ö',
+                        'è', 'é', 'ê', 'ē', 'ĕ', 'ë',
                         'ñ', 'n̈',
                     ],
                 },
@@ -29,11 +29,13 @@ export default {
             ububiko: [],
             inyishu: [],
             ijambo: '',
-            messageVisible: false,
             animation: "animate-in",
             ikibazo: '',
             kosora: '',
-            notMatch: false
+            messageVisible: false,
+            match: false,
+            notMatch: false,
+            empty: false
         }
     },
     computed: {
@@ -59,27 +61,41 @@ export default {
             this.inyishu.pop();
             this.ijambo = this.inyishu.join("");
         },
-        afficherMessage() {
-            this.messageVisible = true;
+        wMatch() {
+            this.match = true;
             setTimeout(() => {
-                this.messageVisible = false;
+                this.match = false;
+            }, 3000);
+        },
+        velify() {
+            this.notMatch = true;
+            setTimeout(() => {
+                this.notMatch = false;
+            }, 3000);
+        },
+        checkEmpty() {
+            this.empty = true;
+            setTimeout(() => {
+                this.empty = false;
             }, 3000);
         },
         check() {
             if (this.ijambo != '') {
-                this.keyboardType[0];
                 this.kosora = this.ikibazo;
                 if (this.ijambo === this.ikibazo) {
-                    console.log(this.ijambo === this.ikibazo);
-                    this.afficherMessage();
+                    this.wMatch();
                     setTimeout(() => {
                         this.other();
-                    }, 3000);
+                    }, 3500);
                 } else {
-                    this.afficherMessage();
-                    this.notMatch = true;
-                    this.other();
+                    this.velify();
+                    setTimeout(() => {
+                        this.other();
+                    }, 3500);
                 }
+            }
+            else {
+                this.checkEmpty();
             }
         },
         other() {
@@ -111,13 +127,23 @@ export default {
                         <h2>{{ ijambo }}</h2>
                     </div>
                 </div>
-                <div class="notif" v-if="messageVisible">
-                    <i class="bi bi-check-circle-fill" :class="{ 'bi-x-circle-fill': notMatch }"></i>
-                    <h3 v-if="notMatch === false">Inyishú nzīzá</h3>
-                    <div class="kosora" v-if="notMatch === true">
+                <!-- match -->
+                <div class="match" v-if="match">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h3>Inyishú nzīzá</h3>
+                </div>
+                <!-- notmatch -->
+                <div class="notif" v-if="notMatch">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <div>
                         <h3>Inyishú nzīzá ní:</h3>
                         <p>{{ kosora }}</p>
                     </div>
+                </div>
+                <!-- empty -->
+                <div class="notif" v-if="empty">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <h3>Tânga inyishú yāwe!</h3>
                 </div>
             </div>
             <div class="keyboard">
@@ -131,6 +157,7 @@ export default {
                             </div>
                         </div>
                         <div class="controls">
+
                             <i class="bi bi-backspace" @click="backspace()"></i>
                             <i class="bi bi-arrow-repeat" @click="other()"></i>
                             <i class="bi bi-check" @click="check()"></i>
@@ -192,7 +219,6 @@ p {
     gap: 1rem;
     padding-inline-start: 1rem;
     position: relative;
-
     overflow: hidden;
 }
 
@@ -203,7 +229,6 @@ p {
     right: 0%;
     opacity: .15;
 }
-
 
 .title .bi {
     border-radius: 50px;
@@ -221,7 +246,7 @@ p {
 
 .container {
     margin: auto;
-    width: 30%;
+    width: 35%;
     height: 100%;
     text-align: justify;
     padding-bottom: 1rem;
@@ -271,39 +296,37 @@ p {
     padding-bottom: 1rem;
 }
 
-.notif {
-    height: 30%;
-    background: var(--dark);
-    animation: fade-in .8s;
+.notif,
+.match {
     display: flex;
     align-items: center;
-    padding-inline: 1rem;
-    gap: 1rem;
+    background: var(--dark);
+    animation: fade-in .8s;
     border-radius: .3rem;
+    padding: 1rem 1rem;
+    gap: 1rem;
+    z-index: 1000;
 }
 
-.notif .bi-check-circle-fill {
-    font-size: 58px;
-    color: green;
+.notif .bi,
+.match .bi {
+    font-size: 38px;
 }
 
-.notif .bi-x-circle-fill {
+.notif .bi,
+.notif h3,
+.notif p {
     color: rgb(255, 125, 125);
 }
 
-.notif .kosora h3,
-.notif .kosora p {
-    color: rgb(255, 125, 125);
-}
-
-.notif h3 {
+.match {
     color: green;
 }
 
 @keyframes fade-in {
     0% {
         transform: translateY(30%);
-        opacity: 0;
+        opacity: .5;
     }
 
     100% {
@@ -313,7 +336,6 @@ p {
 }
 
 .keyboard {
-    /* flex-direction: column; */
     gap: .5rem;
 }
 
@@ -382,11 +404,9 @@ p {
     opacity: .8;
 }
 
-
 @media (max-width:768px) {
     .container {
         width: 92%;
     }
-
 }
 </style>

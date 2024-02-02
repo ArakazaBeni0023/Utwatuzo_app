@@ -36,9 +36,6 @@
             <p>
                 Amajwí arí ku rugero rusānzwé, atarāndîra, atadūgá, atamanúka ntâ kâtuzo akenéye: umugabo, ikirago,
                 inzu, inzira. Utwâtuzo dukenewe cānecāne mu mivugíre y'ámavuga nó mw'īfátanya ry'ámajāmbo.
-
-                Ŭbona utwo tumenyētso tûmugōra yōducá mūnsí agasoma indóme yaményereye, mugábo tuzōtānguranwa ndamutănge
-                ku cîyumvīro.
             </p>
             <br>
             <hr>
