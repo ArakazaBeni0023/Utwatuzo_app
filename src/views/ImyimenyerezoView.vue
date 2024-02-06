@@ -18,7 +18,7 @@ export default {
                     ububiko: [
                         'à', 'á', 'â', 'ā', 'ă', 'ä',
                         'ì', 'í', 'î', 'ī', 'ĭ', 'ï',
-                        'ù', 'ú', 'û', 'ū', 'ŭ', 'ü', 
+                        'ù', 'ú', 'û', 'ū', 'ŭ', 'ü',
                         'ò', 'ó', 'ô', 'ō', 'ǒ', 'ö',
                         'è', 'é', 'ê', 'ē', 'ĕ', 'ë',
                         'ñ', 'n̈',
@@ -146,6 +146,7 @@ export default {
                     <h3>Tânga inyishú yāwe!</h3>
                 </div>
             </div>
+            <!-- keyboard -->
             <div class="keyboard">
                 <div class="keyboard-type" v-for="(keyboard, index) in keyboardType" :key="index"
                     v-show="currentKeyboard === index">
@@ -407,6 +408,13 @@ p {
 @media (max-width:768px) {
     .container {
         width: 92%;
+    }
+
+    .keyboard-type .keys .key,
+    .controls .bi {
+        width: 40px;
+        height: 45px;
+        flex: 1 1 40px;
     }
 }
 </style>
