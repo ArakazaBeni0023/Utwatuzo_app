@@ -3,11 +3,11 @@ export default {
     data() {
         return {
             links: [
-                {
+/*                 {
                     'link': '/kwatura',
                     'icon': 'bi-translate',
                     'title': 'Kwătura',
-                },
+                }, */
                 {
                     'link': '/ububiko',
                     'icon': 'bi-search',
