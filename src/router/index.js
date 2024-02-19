@@ -8,13 +8,13 @@ const routes = [
     component: KwakiraView
   },
   // kwatura
-  {
-    path: '/kwatura',
-    meta: {
-      name: 'Kwătura',
-    },
-    component: () => import('../views/KwaturaView.vue')
-  },
+  /*   {
+      path: '/kwatura',
+      meta: {
+        name: 'Kwătura',
+      },
+      component: () => import('../views/KwaturaView.vue')
+    }, */
   // ububiko
   {
     path: '/ububiko',
