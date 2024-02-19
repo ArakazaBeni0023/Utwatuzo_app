@@ -6,7 +6,7 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.$router.push('/rondera');
+            this.$router.push('/ububiko');
         }, 5000);
     }
 }
