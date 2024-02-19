@@ -6,7 +6,7 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            this.$router.push('/kwatura');
+            this.$router.push('/rondera');
         }, 5000);
     }
 }
