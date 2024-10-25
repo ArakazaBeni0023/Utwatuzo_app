@@ -137,7 +137,7 @@ export default {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding-block-start: 3rem;
+  padding-block-start: 1.5rem;
   padding-block-end: .5rem;
   animation: fade-in .8s;
 }

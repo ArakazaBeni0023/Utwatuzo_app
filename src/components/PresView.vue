@@ -29,7 +29,6 @@ export default {
     left: -30%;
     bottom: 0;
     opacity: .05;
-
 }
 
 .brand {

@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-:root {
+:root { 
   --background: #12121c;
   --light: #e8e8e8;
   --dark: #252533;
